@@ -1,0 +1,23 @@
+`timescale 1ns / 10ps
+module Compare
+(
+    input wire [0:8191] fucktonofhashes,
+  	input wire [0:127] outputhash,
+    output reg [0:6] match
+);
+  always_comb begin
+    match = 10;
+    if(fucktonofhashes[0*128:0*128 + 127] == outputhash)match = 0;
+    if(fucktonofhashes[1*128:1*128 + 127] == outputhash)match = 1;
+    if(fucktonofhashes[2*128:2*128 + 127] == outputhash)match = 2;
+    else if(fucktonofhashes[3*128:3*128 + 127] == outputhash)match = 3;
+    else if(fucktonofhashes[4*128:4*128 + 127] == outputhash)match = 4;
+    else if(fucktonofhashes[5*128:5*128 + 127] == outputhash)match = 5;
+    else if(fucktonofhashes[6*128:6*128 + 127] == outputhash)match = 6;
+    else if(fucktonofhashes[7*128:7*128 + 127] == outputhash)match = 7;
+    else if(fucktonofhashes[8*128:8*128 + 127] == outputhash)match = 8;
+    else if(fucktonofhashes[9*128:9*128 + 127] == outputhash)match = 9;
+    else if(fucktonofhashes[10*128:10*128 + 127] == outputhash)match = 10;
+      
+  end
+endmodule

@@ -1,0 +1,17 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-504.12.2.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim +no_glitch_msg -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -coverage -i -t ps mapped_work.tb_controller 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: source/tb_controller.sv(96): Module 'Clock_Divider' is not defined.
+# ** Error: source/tb_controller.sv(106): Module 'tx_data' is not defined.
+# ** Error: source/tb_controller.sv(116): Module 'rcv_block' is not defined.
+# ** Error: source/tb_controller.sv(125): Module 'tx_data' is not defined.
+# Optimization failed
+# Error loading design

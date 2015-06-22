@@ -1,0 +1,61 @@
+# This file specifies how the pads are placed
+# The name of each pad here has to match the
+# name in the verilog code
+# The Mosis padframe has 4 corners and 40 pads
+
+Version: 2
+
+
+Pad: U2 E
+Pad: U4 E
+Pad: U5 E
+Pad: U6 E
+Pad: U8 E
+Pad: U9 E
+Pad: U10 E
+Pad: U11 E
+Pad: U12 E
+Pad: DE1 E PADNC
+
+Pad: U1 N
+Pad: U3 N
+Pad: DU1 N PADNC
+Pad: DU2 N PADNC
+Pad: DU3 N PADNC
+Pad: DU4 N PADNC
+Pad: DU5 N PADNC
+Pad: DU6 N PADNC
+Pad: DU7 N PADNC
+Pad: DU8 N PADNC
+
+Pad: U13 W
+Pad: U14 W
+Pad: U15 W
+Pad: U16 W
+Pad: U17 W
+Pad: U18 W
+Pad: DW1 W PADNC
+Pad: DW2 W PADNC
+Pad: DW3 W PADNC
+Pad: DW4 W PADNC
+Pad: DW5 W PADNC
+
+Pad: U7 S
+Pad: DS1 S PADNC
+Pad: DS2 S PADNC
+Pad: DS3 S PADNC
+Pad: DS4 S PADNC
+Pad: DS5 S PADNC
+Pad: DS6 S PADNC
+Pad: DS7 S PADNC
+Pad: DS8 S PADNC
+Pad: DS9 S PADNC
+
+Orient: R270
+Pad: DNE NE PADFC
+Orient: R0
+Pad: DNW NW PADFC
+Orient: R90
+Pad: DSW SW PADFC
+Orient: R180
+Pad: DSE SE PADFC

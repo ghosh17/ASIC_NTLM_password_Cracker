@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>ModelSim Coverage Report</title>
+  <!-- original name: _work.controllerContentFrame2.htm -->
+  <link rel="StyleSheet" media="print"  href="../css/ucdb2htmlP.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html.css"/>
+  <script type="text/javascript" src="../scripts/showhide.js"></script>
+  
+</head>
+<body id="ucdb2html_detail" onload="showLast()">
+  <h1><span class="strip">ModelSim</span> Branch Coverage Report</h1>
+  <h3>Scope: /<a href="z000003.htm">work.controller</a></h3>
+  <!-- use script block so buttons vanish when JavaScript is disabled -->
+  <script type="text/javascript">
+  <!--
+  document.write(
+    '<table class="buttons" cellspacing="2" cellpadding="2"><tr>' +
+       '<td id="showAll" width="100" onclick="showAll()" class="button_on" ' +
+           'title="Display all coverage scopes and bins.">Show All</td>' +
+       '<td id="showCov" width="100" onclick="showCov()" class="button_off" ' +
+           'title="Display only covered scopes and bins.">Show Covered</td>' +
+       '<td id="showMis" width="100" onclick="showMis()" class="button_off" ' +
+           'title="Display only uncovered scopes and bins.">Show Missing</td>' +
+    '</tr></table>');
+  //-->
+  </script>
+  <div class="covered"><a name="cvg339"/><hr/><table>
+  <tr l="48" lnk="__HDL_srcfile_2.htm#48" z="    if (n_rst == 0) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="48" lnk="__HDL_srcfile_2.htm#48" z="    if (n_rst == 0) begin" h="1" c="g"/>
+  <tr cr="c" t="E" l="54" lnk="__HDL_srcfile_2.htm#54" z="    else begin" h="1000" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg340"/><hr/><table>
+  <tr l="64" lnk="__HDL_srcfile_2.htm#64" z="    case(state)" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="T" l="65" lnk="__HDL_srcfile_2.htm#65" z="      GENERATE: begin" h="87" c="g"/>
+  <tr cr="c" t="T" l="76" lnk="__HDL_srcfile_2.htm#76" z="      SRAM_WRITE: begin" h="4" c="g"/>
+  <tr cr="c" t="T" l="86" lnk="__HDL_srcfile_2.htm#86" z="      TRANSMITTING: begin" h="815" c="g"/>
+  <tr cr="c" t="T" l="113" lnk="__HDL_srcfile_2.htm#113" z="      SRAM_READ: begin" h="94" c="g"/>
+  <tr cr="c" t="T" l="131" lnk="__HDL_srcfile_2.htm#131" z="      START_OUTPUT: begin" h="2" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg341"/><hr/><table>
+  <tr l="66" lnk="__HDL_srcfile_2.htm#66" z="        if (progress_request_byte_detected == 1) next_state = S..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="66" lnk="__HDL_srcfile_2.htm#66" z="        if (progress_request_byte_detected == 1) next_state = S..." h="1" c="g"/>
+  <tr cr="c" t="T" l="67" lnk="__HDL_srcfile_2.htm#67" z="        else if (match != 64)next_state = SRAM_WRITE;" h="2" c="g"/>
+  <tr cr="c" t="E" l="68" lnk="__HDL_srcfile_2.htm#68" z="        else next_state = GENERATE;" h="84" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg342"/><hr/><table>
+  <tr l="87" lnk="__HDL_srcfile_2.htm#87" z="        if(ready_to_shift == 1 &amp;&amp; tx_done == 1)next_state = SRA..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="87" lnk="__HDL_srcfile_2.htm#87" z="        if(ready_to_shift == 1 &amp;&amp; tx_done == 1)next_state = SRA..." h="90" c="g"/>
+  <tr cr="c" t="E" l="88" lnk="__HDL_srcfile_2.htm#88" z="        else next_state = TRANSMITTING;" h="725" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg343"/><hr/><table>
+  <tr l="95" lnk="__HDL_srcfile_2.htm#95" z="        if((read_address) % 16 == 0)out_byte = clocked_str[0:7]..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="95" lnk="__HDL_srcfile_2.htm#95" z="        if((read_address) % 16 == 0)out_byte = clocked_str[0:7]..." h="58" c="g"/>
+  <tr cr="c" t="A" l="95" lnk="__HDL_srcfile_2.htm#95" z="        if((read_address) % 16 == 0)out_byte = clocked_str[0:7]..." h="757" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg344"/><hr/><table>
+  <tr l="96" lnk="__HDL_srcfile_2.htm#96" z="        if((read_address) % 16 == 1)out_byte = clocked_str[8:15..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="96" lnk="__HDL_srcfile_2.htm#96" z="        if((read_address) % 16 == 1)out_byte = clocked_str[8:15..." h="54" c="g"/>
+  <tr cr="c" t="A" l="96" lnk="__HDL_srcfile_2.htm#96" z="        if((read_address) % 16 == 1)out_byte = clocked_str[8:15..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg345"/><hr/><table>
+  <tr l="97" lnk="__HDL_srcfile_2.htm#97" z="        if((read_address) % 16 == 2)out_byte = clocked_str[16:2..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="97" lnk="__HDL_srcfile_2.htm#97" z="        if((read_address) % 16 == 2)out_byte = clocked_str[16:2..." h="54" c="g"/>
+  <tr cr="c" t="A" l="97" lnk="__HDL_srcfile_2.htm#97" z="        if((read_address) % 16 == 2)out_byte = clocked_str[16:2..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg346"/><hr/><table>
+  <tr l="98" lnk="__HDL_srcfile_2.htm#98" z="        if((read_address) % 16 == 3)out_byte = clocked_str[24:3..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="98" lnk="__HDL_srcfile_2.htm#98" z="        if((read_address) % 16 == 3)out_byte = clocked_str[24:3..." h="54" c="g"/>
+  <tr cr="c" t="A" l="98" lnk="__HDL_srcfile_2.htm#98" z="        if((read_address) % 16 == 3)out_byte = clocked_str[24:3..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg347"/><hr/><table>
+  <tr l="99" lnk="__HDL_srcfile_2.htm#99" z="        if((read_address) % 16 == 4)out_byte = clocked_str[32:3..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="99" lnk="__HDL_srcfile_2.htm#99" z="        if((read_address) % 16 == 4)out_byte = clocked_str[32:3..." h="54" c="g"/>
+  <tr cr="c" t="A" l="99" lnk="__HDL_srcfile_2.htm#99" z="        if((read_address) % 16 == 4)out_byte = clocked_str[32:3..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg348"/><hr/><table>
+  <tr l="100" lnk="__HDL_srcfile_2.htm#100" z="        if((read_address) % 16 == 5)out_byte = clocked_str[40:4..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="100" lnk="__HDL_srcfile_2.htm#100" z="        if((read_address) % 16 == 5)out_byte = clocked_str[40:4..." h="54" c="g"/>
+  <tr cr="c" t="A" l="100" lnk="__HDL_srcfile_2.htm#100" z="        if((read_address) % 16 == 5)out_byte = clocked_str[40:4..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg349"/><hr/><table>
+  <tr l="101" lnk="__HDL_srcfile_2.htm#101" z="        if((read_address) % 16 == 6)out_byte = clocked_str[48:5..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="101" lnk="__HDL_srcfile_2.htm#101" z="        if((read_address) % 16 == 6)out_byte = clocked_str[48:5..." h="54" c="g"/>
+  <tr cr="c" t="A" l="101" lnk="__HDL_srcfile_2.htm#101" z="        if((read_address) % 16 == 6)out_byte = clocked_str[48:5..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg350"/><hr/><table>
+  <tr l="102" lnk="__HDL_srcfile_2.htm#102" z="        if((read_address) % 16 == 7)out_byte = clocked_str[56:6..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="102" lnk="__HDL_srcfile_2.htm#102" z="        if((read_address) % 16 == 7)out_byte = clocked_str[56:6..." h="54" c="g"/>
+  <tr cr="c" t="A" l="102" lnk="__HDL_srcfile_2.htm#102" z="        if((read_address) % 16 == 7)out_byte = clocked_str[56:6..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg351"/><hr/><table>
+  <tr l="103" lnk="__HDL_srcfile_2.htm#103" z="        if((read_address) % 16 == 8)out_byte = clocked_str[64:7..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="103" lnk="__HDL_srcfile_2.htm#103" z="        if((read_address) % 16 == 8)out_byte = clocked_str[64:7..." h="54" c="g"/>
+  <tr cr="c" t="A" l="103" lnk="__HDL_srcfile_2.htm#103" z="        if((read_address) % 16 == 8)out_byte = clocked_str[64:7..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg352"/><hr/><table>
+  <tr l="104" lnk="__HDL_srcfile_2.htm#104" z="        if((read_address) % 16 == 9)out_byte = clocked_str[72:7..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="104" lnk="__HDL_srcfile_2.htm#104" z="        if((read_address) % 16 == 9)out_byte = clocked_str[72:7..." h="54" c="g"/>
+  <tr cr="c" t="A" l="104" lnk="__HDL_srcfile_2.htm#104" z="        if((read_address) % 16 == 9)out_byte = clocked_str[72:7..." h="761" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg353"/><hr/><table>
+  <tr l="105" lnk="__HDL_srcfile_2.htm#105" z="        if((read_address) % 16 == 10)out_byte = clocked_str[80:..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="105" lnk="__HDL_srcfile_2.htm#105" z="        if((read_address) % 16 == 10)out_byte = clocked_str[80:..." h="46" c="g"/>
+  <tr cr="c" t="A" l="105" lnk="__HDL_srcfile_2.htm#105" z="        if((read_address) % 16 == 10)out_byte = clocked_str[80:..." h="769" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg354"/><hr/><table>
+  <tr l="106" lnk="__HDL_srcfile_2.htm#106" z="        if((read_address) % 16 == 11)out_byte = clocked_str[88:..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="106" lnk="__HDL_srcfile_2.htm#106" z="        if((read_address) % 16 == 11)out_byte = clocked_str[88:..." h="45" c="g"/>
+  <tr cr="c" t="A" l="106" lnk="__HDL_srcfile_2.htm#106" z="        if((read_address) % 16 == 11)out_byte = clocked_str[88:..." h="770" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg355"/><hr/><table>
+  <tr l="107" lnk="__HDL_srcfile_2.htm#107" z="        if((read_address) % 16 == 12)out_byte = clocked_str[96:..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="107" lnk="__HDL_srcfile_2.htm#107" z="        if((read_address) % 16 == 12)out_byte = clocked_str[96:..." h="45" c="g"/>
+  <tr cr="c" t="A" l="107" lnk="__HDL_srcfile_2.htm#107" z="        if((read_address) % 16 == 12)out_byte = clocked_str[96:..." h="770" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg356"/><hr/><table>
+  <tr l="108" lnk="__HDL_srcfile_2.htm#108" z="        if((read_address) % 16 == 13)out_byte = clocked_str[104..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="108" lnk="__HDL_srcfile_2.htm#108" z="        if((read_address) % 16 == 13)out_byte = clocked_str[104..." h="45" c="g"/>
+  <tr cr="c" t="A" l="108" lnk="__HDL_srcfile_2.htm#108" z="        if((read_address) % 16 == 13)out_byte = clocked_str[104..." h="770" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg357"/><hr/><table>
+  <tr l="109" lnk="__HDL_srcfile_2.htm#109" z="        if((read_address) % 16 == 14)out_byte = clocked_str[112..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="109" lnk="__HDL_srcfile_2.htm#109" z="        if((read_address) % 16 == 14)out_byte = clocked_str[112..." h="45" c="g"/>
+  <tr cr="c" t="A" l="109" lnk="__HDL_srcfile_2.htm#109" z="        if((read_address) % 16 == 14)out_byte = clocked_str[112..." h="770" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg358"/><hr/><table>
+  <tr l="110" lnk="__HDL_srcfile_2.htm#110" z="        if((read_address) % 16 == 15)out_byte = clocked_str[120..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="110" lnk="__HDL_srcfile_2.htm#110" z="        if((read_address) % 16 == 15)out_byte = clocked_str[120..." h="45" c="g"/>
+  <tr cr="c" t="A" l="110" lnk="__HDL_srcfile_2.htm#110" z="        if((read_address) % 16 == 15)out_byte = clocked_str[120..." h="770" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg359"/><hr/><table>
+  <tr l="126" lnk="__HDL_srcfile_2.htm#126" z="        if((read_address + 1) % 16 == 0)read_enable = 1; //Read..." c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="126" lnk="__HDL_srcfile_2.htm#126" z="        if((read_address + 1) % 16 == 0)read_enable = 1; //Read..." h="9" c="g"/>
+  <tr cr="c" t="E" l="127" lnk="__HDL_srcfile_2.htm#127" z="        else read_enable = 0;" h="85" c="g"/>
+  </table>
+  </div><div><a name="cvg360"/><hr/><table>
+  <tr l="128" lnk="__HDL_srcfile_2.htm#128" z="        if(address == 511)" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="128" lnk="__HDL_srcfile_2.htm#128" z="        if(address == 511)" h="0" c="r"/>
+  <tr cr="c" t="A" l="128" lnk="__HDL_srcfile_2.htm#128" z="        if(address == 511)" h="94" c="g"/>
+  </table>
+  </div><script type="text/javascript" src="../scripts/buildbranchpage.js"></script>
+  <!-- make sure jumps to last few line nos work -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</body>
+</html>

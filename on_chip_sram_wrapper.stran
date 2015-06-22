@@ -1,0 +1,42 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-504.12.2.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim +no_glitch_msg -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -coverage -i -t ps source_work.tb_on_chip_sram_wrapper 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_on_chip_sram_wrapper(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.on_chip_sram_wrapper(wrapper)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim.simple_scale_mem(scaleable_memory)#1
+run 2000 ns
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_on_chip_sram_wrapper/DUT/MEM
+# ** Info: Testing Memory Dump Feature
+#    Time: 96 ns  Scope: tb_on_chip_sram_wrapper.TEST_BENCH File: source/tb_on_chip_sram_wrapper.sv Line: 128
+# ** Info: Testing Data clear feature
+#    Time: 102 ns  Scope: tb_on_chip_sram_wrapper.TEST_BENCH File: source/tb_on_chip_sram_wrapper.sv Line: 138
+# ** Info: Testing Verbose Signal
+#    Time: 114 ns  Scope: tb_on_chip_sram_wrapper.TEST_BENCH File: source/tb_on_chip_sram_wrapper.sv Line: 149
+# ** Note: Memory contents are being cleared
+#    Time: 114 ns  Iteration: 2  Instance: /tb_on_chip_sram_wrapper/DUT/MEM
+# ** Info: Testing Memory Initialziation Feature
+#    Time: 126 ns  Scope: tb_on_chip_sram_wrapper.TEST_BENCH File: source/tb_on_chip_sram_wrapper.sv Line: 158
+# ** Error: (vsim-7) Failed to open VHDL file "example_init_1.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 126 ns  Iteration: 2  Instance: /tb_on_chip_sram_wrapper/DUT/MEM
+# ** Fatal: (vsim-7) Failed to open VHDL file "example_init_1.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 126 ns  Iteration: 2  Process: /tb_on_chip_sram_wrapper/DUT/MEM File: nofile
+# Fatal error at a source-protected location
+# 

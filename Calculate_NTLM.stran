@@ -1,0 +1,27 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-504.16.2.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim +no_glitch_msg -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -coverage -i -t ps source_work.tb_Calculate_NTLM 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_Calculate_NTLM(fast)
+add wave -position insertpoint  \
+sim:/tb_Calculate_NTLM/tb_length \
+sim:/tb_Calculate_NTLM/tb_instr \
+sim:/tb_Calculate_NTLM/tb_hash \
+sim:/tb_Calculate_NTLM/tb_d16 \
+sim:/tb_Calculate_NTLM/tb_c16 \
+sim:/tb_Calculate_NTLM/tb_buff \
+sim:/tb_Calculate_NTLM/tb_b16 \
+sim:/tb_Calculate_NTLM/tb_a16
+ run 1000 ns
+# Current Value of nt_buffer = 0061007000730073006f007700000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000
+# 
+# Current Value of hash = f338a4976b153e969d187cb0ac151e4b
+# 

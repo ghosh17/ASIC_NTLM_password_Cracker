@@ -1,0 +1,176 @@
+module tx_data
+  (
+    input logic n_rst,
+    input logic clk,
+    input logic [7:0] pwd, // being sent in from the controller
+    input logic passcrack, //being sent in from the controller
+    output logic done_flag, // signals the controller that the 8 bit transmission is completed
+    output logic tx_out
+  );
+    logic rol1;
+//    logic rol2;
+    logic enable_shift;
+    logic enable_load;
+    //logic flex_out;
+    logic flag;
+    logic enable_count;
+    logic enable_clear1;
+//    logic enable_clear2;
+    logic [9:0] counter;
+//    logic enable_count2;
+//    logic counter2;
+//    logic flag2;
+    logic [7:0] flex_pass;
+    
+    assign done_flag = counter == 8;
+    //reg [3:0] rol1; //= 7;
+    //reg [16:0] rol2; //= 3905; //rollover values for baud rate @ 100Mhz clock cycle
+    
+  typedef enum logic [2:0] {IDLE,SEND,DATA} stateType;
+  stateType next, current;
+  
+  // flex counter for parrallel to serial transport
+  //flex_pts_sr #(8) pass(
+   
+   defparam pass1.NUM_BITS = 10;
+   defparam pass1.SHIFT_MSB = 1;
+   
+  flex_pts_sr pass1( 
+    .clk(clk),
+    .n_rst(n_rst),
+    .shift_enable(enable_shift),
+    .load_enable(enable_load),
+    .parallel_in({1'b0,flex_pass,1'b1}),
+    .serial_out(tx_out)
+    );
+  
+  //flex counter for counting the bits in the packets of 8
+  //flex_counter #(4)flex1(
+   
+   defparam flex1.NUM_CNT_BITS = 10;
+   
+  flex_counter flex1(  
+    .clk(clk),
+    .n_rst(n_rst),
+    .clear(enable_clear1),
+    .count_enable(enable_count),
+    .rollover_val(10'd9),
+    .count_out(counter),
+    .rollover_flag(flag)
+    );
+    
+  //flex counter for counting the bits in the shifted in password
+  //flex_counter #(8) flex2(
+
+//    defparam flex2.NUM_CNT_BITS = 10;
+//    
+//      flex_counter flex2( 
+//       .clk(clk),
+//       .n_rst(n_rst),
+//       .clear(enable_clear2),
+//       .count_enable(enable_count2),
+//       .rollover_val(3905),
+//       .count_out(counter2),
+//       .rollover_flag(flag2)
+//       );
+    
+    
+  
+  //flip flop for the state transitions 
+  always_ff @(posedge clk, negedge n_rst)
+  begin 
+    if (n_rst == 1'b0)	
+      begin 
+        current <= IDLE;
+      end
+    else
+      begin
+        current <= next;
+      end
+    end
+    
+  //Next State Transition 
+  always_comb
+  begin
+    next = current;
+    case(current)
+      IDLE: begin
+        if (passcrack == 1'b1) begin 
+          next = SEND;
+        end
+        else
+          next = IDLE;
+        end
+            
+      SEND: begin
+        next = DATA;
+      end
+      
+      DATA: begin
+        if (passcrack == 1'b0) begin //The controller stops sending bits
+          next = IDLE;
+	end
+	if(flag == 1'b1) begin 
+	  next = SEND;
+        end
+      end
+    endcase
+  end
+      
+    
+  //Output
+  always_comb begin
+  enable_load = 1'b0; //was commented
+  //enable_shift = 1'b0;
+  enable_count = 1'b0; //was commented
+  flex_pass = 0; //didn't exist
+  enable_shift = 0;//didn't exist
+//  enable_count2 = 1'b1; //enables the baud rate flex counter
+    enable_clear1 = 1'b0;
+    case (current)
+      IDLE:begin
+        enable_load = 1'b0;
+	enable_shift = 1'b0;
+	enable_count = 1'b0;
+	enable_clear1 = 1'b1;
+        //tx_out = 1'b1; //Sets up the Rising to falling edge transition for start bit detection
+      end
+      SEND:begin
+        //tx_out = 1'b0; //Completes the high to low transition
+	
+        enable_load = 1'b1; //Starts the parallel to sereial flex counter
+        enable_count = 1'b1; //Starts the first flex counter
+        enable_shift = 1'b0;//was commented
+        flex_pass = pwd; //transfers the cracked password from the controller to the parrallel to serial flex counter
+          
+      end
+      DATA: begin
+      //if (counter2 == rol2)begin
+	  enable_load = 1'b0;
+	  enable_count = 1'b1;
+	  enable_shift = 1'b1;
+	  if (flag) begin
+	    //tx_out = 1'b1; //stop bit
+	    enable_clear1 = 1'b1; //clears the flex counter 1 back to 0 
+	  end
+// 	  else begin
+// 	    enable_shift = 1'b1; //signal to shift in bit from parrellel to serial flex counter
+// 	    //tx_out = flex_out; // shift in bit
+// 	  end
+	  end	
+// 	  else if (counter2 == rol2 + 1) begin
+// 	    enable_clear2 = 1'b1;
+// 	  end
+	
+    endcase
+  end
+  
+endmodule
+    
+      
+        
+   
+  
+  
+  
+  

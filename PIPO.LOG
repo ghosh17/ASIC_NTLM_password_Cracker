@@ -1,0 +1,66 @@
+
+********************************************************************************
+Product   : Virtuoso(R) STREAM In
+Program   : @(#)$CDS: pipo.exe version 5.1.0 11/22/2011 01:41 (cicln04) $
+SubVersion: sub-version 5.10.41.500.6.151
+Started at: 04-May-2015  09:34:01
+User Name : mg58
+Host Name : ecegrid-thin5.ecn.purdue.edu
+Directory : /home/ecegrid/a/mg58/ece337/Project
+CADENCE Design Systems, Inc.
+********************************************************************************
+
+Stream file   : /home/ecegrid/a/mg58/ece337/Project/final.gds2
+
+Reading Stream File ...
+VERSION      : 3
+MODIFICATION : Fri Mar 13 13:08:02 2015
+ACCESS       : Fri Mar 13 13:08:02 2015
+WARNING (158): Years in non-standard four-digit format encountered in the Stream file.
+GDS LIBRARY  : DesignLib
+U-UNIT/DBU   : 0.001000000000
+METRIC/DBU   : 0.000000001000
+
+TARGET LIBRARY PATH: /home/ecegrid/a/mg58/ece337/Project/Project_Layout
+
+     1. scanning cellview (lab7_layout_design layout)
+     2. scanning cellview (m2_m1 layout)
+     3. scanning cellview (m3_m2 layout)
+     4. scanning cellview (lab7_layout_design_via0 layout)
+     5. scanning cellview (lab7_layout_design_via1 layout)
+     6. scanning cellview (lab7_layout_design_via2 layout)
+     7. scanning cellview (lab7_layout_design_via3 layout)
+     8. scanning cellview (lab7_layout_design_via4 layout)
+     9. scanning cellview (padvdd layout)
+    10. scanning cellview (padnc layout)
+    11. scanning cellview (padout layout)
+    12. scanning cellview (padinc layout)
+    13. scanning cellview (padgnd layout)
+    14. scanning cellview (padfc layout)
+    15. scanning cellview (dffsr layout)
+    16. scanning cellview (xnor2x1 layout)
+    17. scanning cellview (mux2x1 layout)
+    18. scanning cellview (xor2x1 layout)
+    19. scanning cellview (or2x2 layout)
+    20. scanning cellview (oai22x1 layout)
+    21. scanning cellview (oai21x1 layout)
+    22. scanning cellview (nor2x1 layout)
+    23. scanning cellview (nand3x1 layout)
+    24. scanning cellview (nand2x1 layout)
+    25. scanning cellview (invx8 layout)
+    26. scanning cellview (invx4 layout)
+    27. scanning cellview (invx2 layout)
+    28. scanning cellview (invx1 layout)
+    29. scanning cellview (dffposx1 layout)
+    30. scanning cellview (nor3x1 layout)
+    31. scanning cellview (bufx4 layout)
+    32. scanning cellview (bufx2 layout)
+    33. scanning cellview (aoi22x1 layout)
+    34. scanning cellview (aoi21x1 layout)
+    35. scanning cellview (and2x2 layout)
+    36. scanning cellview (and2x1 layout)
+    37. scanning cellview (fill layout)
+
+PASS 2...
+WARNING (69): Failed to open the technology file `techfile.cds' from the library `NCSU_TechLib_ami06' in the append mode. Undefined layer-purpose pairs will not be translated.
+FATAL (299): Stream In is unable to find the structure definition for the primary cell in the stream file. Ensure that you have specified the correct values with the Primary Cell and Input Stream File options.

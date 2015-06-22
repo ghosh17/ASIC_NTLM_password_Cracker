@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>ModelSim Coverage Report</title>
+  <!-- original name: _tb_controller_DUTContentFrame2.htm -->
+  <link rel="StyleSheet" media="print"  href="../css/ucdb2htmlP.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html.css"/>
+  <script type="text/javascript" src="../scripts/showhide.js"></script>
+  
+</head>
+<body id="ucdb2html_detail" onload="showLast()">
+  <h1><span class="strip">ModelSim</span> Branch Coverage Report</h1>
+  <h3>Scope: /<a href="z000009.htm">tb_controller</a>/<a href="z000321.htm">DUT</a></h3>
+  <!-- use script block so buttons vanish when JavaScript is disabled -->
+  <script type="text/javascript">
+  <!--
+  document.write(
+    '<table class="buttons" cellspacing="2" cellpadding="2"><tr>' +
+       '<td id="showAll" width="100" onclick="showAll()" class="button_on" ' +
+           'title="Display all coverage scopes and bins.">Show All</td>' +
+       '<td id="showCov" width="100" onclick="showCov()" class="button_off" ' +
+           'title="Display only covered scopes and bins.">Show Covered</td>' +
+       '<td id="showMis" width="100" onclick="showMis()" class="button_off" ' +
+           'title="Display only uncovered scopes and bins.">Show Missing</td>' +
+    '</tr></table>');
+  //-->
+  </script>
+  <div class="covered"><a name="cvg322"/><hr/><table>
+  <tr l="38" lnk="__HDL_srcfile_2.htm#38" z="    if (n_rst == 0) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="38" lnk="__HDL_srcfile_2.htm#38" z="    if (n_rst == 0) begin" h="1" c="g"/>
+  <tr cr="c" t="E" l="44" lnk="__HDL_srcfile_2.htm#44" z="    else begin" h="1263080" c="g"/>
+  </table>
+  </div><div><a name="cvg323"/><hr/><table>
+  <tr l="54" lnk="__HDL_srcfile_2.htm#54" z="    case(state)" c="Y" p="66.66"/><tr/>
+  <tr cr="c" t="T" l="55" lnk="__HDL_srcfile_2.htm#55" z="      GENERATE: begin" h="1263070" c="g"/>
+  <tr cr="c" t="T" l="63" lnk="__HDL_srcfile_2.htm#63" z="      SRAM_WRITE: begin" h="4" c="g"/>
+  <tr cr="m" t="T" l="78" lnk="__HDL_srcfile_2.htm#78" z="      SRAM_READ: begin" h="0" c="r"/>
+  </table>
+  </div><div class="covered"><a name="cvg324"/><hr/><table>
+  <tr l="56" lnk="__HDL_srcfile_2.htm#56" z="        if (strlen == 4)next_state = SRAM_READ;" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="56" lnk="__HDL_srcfile_2.htm#56" z="        if (strlen == 4)next_state = SRAM_READ;" h="414635" c="g"/>
+  <tr cr="c" t="A" l="56" lnk="__HDL_srcfile_2.htm#56" z="        if (strlen == 4)next_state = SRAM_READ;" h="848435" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg325"/><hr/><table>
+  <tr l="57" lnk="__HDL_srcfile_2.htm#57" z="        if (match != 64)next_state = SRAM_WRITE;" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="57" lnk="__HDL_srcfile_2.htm#57" z="        if (match != 64)next_state = SRAM_WRITE;" h="2" c="g"/>
+  <tr cr="c" t="E" l="58" lnk="__HDL_srcfile_2.htm#58" z="        else next_state = GENERATE;" h="1263068" c="g"/>
+  </table>
+  </div><div class="missing"><a name="cvg326"/><hr/><table>
+  <tr l="83" lnk="__HDL_srcfile_2.htm#83" z="        if(address == 512)" c="R" p="0.00"/><tr/>
+  <tr cr="m" t="I" l="83" lnk="__HDL_srcfile_2.htm#83" z="        if(address == 512)" h="0" c="r"/>
+  <tr cr="m" t="A" l="83" lnk="__HDL_srcfile_2.htm#83" z="        if(address == 512)" h="0" c="r"/>
+  </table>
+  </div><script type="text/javascript" src="../scripts/buildbranchpage.js"></script>
+  <!-- make sure jumps to last few line nos work -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</body>
+</html>

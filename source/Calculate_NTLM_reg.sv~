@@ -1,0 +1,465 @@
+`timescale 1ns / 10ps
+module Calculate_NTLM_reg
+(
+  	input wire clk,
+  	input wire n_rst,
+    input wire [0:127] instr,
+  	input wire [0:3] length,
+    output reg [0:127] hash
+);
+  reg [0:511] buff;
+  reg [0:31] ai =  32'h67452301;
+  reg [0:31] bi = 32'hefcdab89;
+  reg [0:31] ci = 32'h98badcfe;
+  reg [0:31] di = 32'h10325476;
+  reg [0:31] root2 = 32'h5a827999;
+  reg [0:31] root3 = 32'h6ed9eba1;
+  reg [0:31] a1;
+  reg [0:31] a2;
+  reg [0:31] a3;
+  reg [0:31] a4;
+  reg [0:31] a5;
+  reg [0:31] a6;
+  reg [0:31] a7;
+  reg [0:31] a8;
+  reg [0:31] a9;
+  reg [0:31] a10;
+  reg [0:31] a11;
+  reg [0:31] a12;
+  reg [0:31] a13;
+  reg [0:31] a14;
+  reg [0:31] a15;
+  reg [0:31] a16;
+  reg [0:31] a17;
+  reg [0:31] a18;
+  reg [0:31] a19;
+  reg [0:31] a20;
+  reg [0:31] a21;
+  reg [0:31] a22;
+  reg [0:31] a23;
+  reg [0:31] a24;
+  reg [0:31] b1;
+  reg [0:31] b2;
+  reg [0:31] b3;
+  reg [0:31] b4;
+  reg [0:31] b5;
+  reg [0:31] b6;
+  reg [0:31] b7;
+  reg [0:31] b8;
+  reg [0:31] b9;
+  reg [0:31] b10;
+  reg [0:31] b11;
+  reg [0:31] b12;
+  reg [0:31] b13;
+  reg [0:31] b14;
+  reg [0:31] b15;
+  reg [0:31] b16;
+  reg [0:31] b17;
+  reg [0:31] b18;
+  reg [0:31] b19;
+  reg [0:31] b20;
+  reg [0:31] b21;
+  reg [0:31] b22;
+  reg [0:31] b23;
+  reg [0:31] b24;
+  reg [0:31] c1;
+  reg [0:31] c2;
+  reg [0:31] c3;
+  reg [0:31] c4;
+  reg [0:31] c5;
+  reg [0:31] c6;
+  reg [0:31] c7;
+  reg [0:31] c8;
+  reg [0:31] c9;
+  reg [0:31] c10;
+  reg [0:31] c11;
+  reg [0:31] c12;
+  reg [0:31] c13;
+  reg [0:31] c14;
+  reg [0:31] c15;
+  reg [0:31] c16;
+  reg [0:31] c17;
+  reg [0:31] c18;
+  reg [0:31] c19;
+  reg [0:31] c20;
+  reg [0:31] c21;
+  reg [0:31] c22;
+  reg [0:31] c23;
+  reg [0:31] c24;
+  reg [0:31] d1;
+  reg [0:31] d2;
+  reg [0:31] d3;
+  reg [0:31] d4;
+  reg [0:31] d5;
+  reg [0:31] d6;
+  reg [0:31] d7;
+  reg [0:31] d8;
+  reg [0:31] d9;
+  reg [0:31] d10;
+  reg [0:31] d11;
+  reg [0:31] d12;
+  reg [0:31] d13;
+  reg [0:31] d14;
+  reg [0:31] d15;
+  reg [0:31] d16;
+  reg [0:31] d17;
+  reg [0:31] d18;
+  reg [0:31] d19;
+  reg [0:31] d20;
+  reg [0:31] d21;
+  reg [0:31] d22;
+  reg [0:31] d23;
+  reg [0:127] temphash;
+  reg [0:31] d24;
+ reg [0:31] a2next;
+ reg [0:31] b2next;
+ reg [0:31] c2next;
+ reg [0:31] d2next;
+ reg [0:31] a4next;
+ reg [0:31] b4next;
+ reg [0:31] c4next;
+ reg [0:31] d4next;
+ reg [0:31] a6next;
+ reg [0:31] b6next;
+ reg [0:31] c6next;
+ reg [0:31] d6next;
+ reg [0:31] a8next;
+ reg [0:31] b8next;
+ reg [0:31] c8next;
+ reg [0:31] d8next;
+ reg [0:31] a10next;
+ reg [0:31] b10next;
+ reg [0:31] c10next;
+ reg [0:31] d10next;
+ reg [0:31] a12next;
+ reg [0:31] b12next;
+ reg [0:31] c12next;
+ reg [0:31] d12next;
+ reg [0:31] a14next;
+ reg [0:31] b14next;
+ reg [0:31] c14next;
+ reg [0:31] d14next;
+ reg [0:31] a16next;
+ reg [0:31] b16next;
+ reg [0:31] c16next;
+ reg [0:31] d16next;
+ reg [0:31] a18next;
+ reg [0:31] b18next;
+ reg [0:31] c18next;
+ reg [0:31] d18next;
+ reg [0:31] a20next;
+ reg [0:31] b20next;
+ reg [0:31] c20next;
+ reg [0:31] d20next;
+ reg [0:31] a22next;
+ reg [0:31] b22next;
+ reg [0:31] c22next;
+ reg [0:31] d22next;
+ reg [0:31] a24next;
+ reg [0:31] b24next;
+ reg [0:31] c24next;
+ reg [0:31] d24next;
+    always_comb 
+        begin
+          if(length >1)buff[32*0:32*0+31] = instr[2 * 8*0:2 * 8*0 +7] | (instr[8*(2 * 0 + 1):8*(2 * 0 + 1) + 7] << 16);//i=0
+          if(length >3)buff[32*1:32*1+31] = instr[2 * 8*1:2 * 8*1 +7] | (instr[8*(2 * 1 + 1):8*(2 * 1 + 1) + 7] << 16);//i=1
+          if(length >5)buff[32*2:32*2+31] = instr[2 * 8*2:2 * 8*2 +7] | (instr[8*(2 * 2 + 1):8*(2 * 2 + 1) + 7] << 16);//i=2
+          if(length >7)buff[32*3:32*3+31] = instr[2 * 8*3:2 * 8*3 +7] | (instr[8*(2 * 3 + 1):8*(2 * 3 + 1) + 7] << 16);//i=3
+          if(length >9)buff[32*4:32*4+31] = instr[2 * 8*4:2 * 8*4 +7] | (instr[8*(2 * 4 + 1):8*(2 * 4 + 1) + 7] << 16);//i=4
+          if(length >11)buff[32*5:32*5+31] = instr[2 * 8*5:2 * 8*5 +7] | (instr[8*(2 * 5 + 1):8*(2 * 5 + 1) + 7] << 16);//i=5
+          if(length >13)buff[32*6:32*6+31] = instr[2 * 8*6:2 * 8*6 +7] | (instr[8*(2 * 6 + 1):8*(2 * 6 + 1) + 7] << 16);//i=6
+          if(length >15)buff[32*7:32*7+31] = instr[2 * 8*7:2 * 8*7 +7] | (instr[8*(2 * 7 + 1):8*(2 * 7 + 1) + 7] << 16);//i=7
+          
+          //padding
+          if(length == 1) begin
+            buff[32*(1/2):32*(1/2) + 31] = instr[8*(1 - 1):8*(1 - 1) + 7] | 24'h800000;
+            buff[32*(1/2) + 32:14*32 + 31] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 2)buff[32*(2/2):32*(2/2) + 31] = 8'h80;
+          if(length == 3) begin
+            buff[32*(3/2):32*(3/2) + 31] = instr[8*(3 - 1):8*(3 - 1) + 7] | 24'h800000;
+            buff[32*(3/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 4)buff[32*(4/2):32*(4/2) + 31] = 8'h80;
+          if(length == 5) begin
+            buff[32*(5/2):32*(5/2) + 31] = instr[8*(5 - 1):8*(5 - 1) + 7] | 24'h800000;
+            buff[32*(5/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 6)buff[32*(6/2):32*(6/2) + 31] = 8'h80;
+          if(length == 7)begin
+            buff[32*(7/2):32*(7/2) + 31] = instr[8*(7 - 1):8*(7 - 1) + 7] | 24'h800000;
+            buff[32*(7/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 8)buff[32*(8/2):32*(8/2) + 31] = 8'h80;
+          if(length == 9) begin
+            buff[32*(9/2):32*(9/2) + 31] = instr[8*(9 - 1):8*(9 - 1) + 7] | 24'h800000;
+            buff[32*(9/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 10)buff[32*(10/2):32*(10/2) + 31] = 8'h80;
+          if(length == 11)begin
+            buff[32*(11/2):32*(11/2) + 31] = instr[8*(11 - 1):8*(11 - 1) + 7] | 24'h800000;
+            buff[32*(11/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 12)buff[32*(12/2):32*(12/2) + 31] = 8'h80;
+          if(length == 13)begin
+            buff[32*(13/2):32*(13/2) + 31] = instr[8*(13 - 1):8*(13 - 1) + 7] | 24'h800000;
+            buff[32*(13/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          if(length == 14)buff[32*(14/2):32*(14/2) + 31] = 8'h80;
+          if(length == 15)begin
+            buff[32*(15/2):32*(15/2) + 31] = instr[8*(15 - 1):8*(15 - 1) + 7] | 24'h800000;
+            buff[32*(15/2):14*32] = length << 4;
+            buff[15*32:15*32 + 31] = 0;
+          end
+          else buff[32*(16/2):32*(16/2) + 31] = 8'h80;
+		  
+          //put the length
+          //buff[14*32:14*32 + 31] = length << 4;
+          /* Round 1 */
+          a1 = ai + ((di ^ (bi & (ci ^ di)))  +  buff[32*0 : 32*0 + 31]);
+          a2next = (a1 << 3 ) | (a1 >> 29);
+          d1 = di + ((ci ^ (a2next & (bi ^ ci)))  +  buff[32*1 : 32*1 + 31]);
+          d2next = (d1 << 7 ) | (d1 >> 25);
+          c1 = ci + ((bi ^ (d2next & (a2next ^ bi)))  +  buff[2*32 : 2*32 + 31]);
+          c2next = (c1 << 11) | (c1 >> 21);
+          b1 = bi + ((a2next ^ (c2next & (d2next ^ a2next)))  +  buff[3*32 : 3*32 + 31]);
+          b2next = (b1 << 19) | (b1 >> 13);
+          
+          a3 = a2 + ((d2 ^ (b2 & (c2 ^ d2)))  +  buff[32*4 : 32*4 + 31])  ;
+          a4next = (a3 << 3 ) | (a3 >> 29);
+          d3 = d2 + ((c2 ^ (a4next & (b2 ^ c2)))  +  buff[32*5 : 32*5 + 31])  ;
+          d4next = (d3 << 7 ) | (d3 >> 25);
+          c3 = c2 + ((b2 ^ (d4next & (a4next ^ b2)))  +  buff[32*6 : 32*6 + 31])  ;
+          c4next = (c3 << 11) | (c3 >> 21);
+          b3 = b2 + ((a4next ^ (c4next & (d4next ^ a4next)))  +  buff[32*7 : 32*7 + 31])  ;
+          b4next = (b3 << 19) | (b3 >> 13);
+ 
+          a5 = a4 + ((d4 ^ (b4 & (c4 ^ d4)))  +  buff[32*8 : 32*8 + 31])  ;
+          a6next = (a5 << 3 ) | (a5 >> 29);
+          d5 = d4 + ((c4 ^ (a6next & (b4 ^ c4)))  +  buff[32*9 : 32*9 + 31]) ;
+          d6next = (d5 << 7 ) | (d5 >> 25);
+          c5 = c4 + ((b4 ^ (d6next & (a6next ^ b4)))  +  buff[32*10 : 32*10 + 31]) ;
+          c6next = (c5 << 11) | (c5 >> 21);
+          b5 = b4 + ((a6next ^ (c6next & (d6next ^ a6next)))  +  buff[32*11 : 32*11 + 31]) ;
+          b6next = (b5 << 19) | (b5 >> 13);
+ 
+          a7 = a6 + (d6 ^ (b6 & (c6 ^ d6)))  +  buff[32*12 : 32*12 + 31] ;
+          a8next = (a7 << 3 ) | (a7 >> 29);
+          d7 = d6 + (c6 ^ (a8next & (b6 ^ c6)))  +  buff[32*13 : 32*13 + 31] ;
+          d8next = (d7 << 7 ) | (d7 >> 25);
+          c7 = c6 + (b6 ^ (d8next & (a8next ^ b6)))  +  buff[32*14 : 32*14 + 31] ;
+          c8next = (c7 << 11) | (c7 >> 21);
+          b7 = b6 + (a8next ^ (c8next & (d8next ^ a8next)))  +  buff[32*15 : 32*15 + 31] ;
+          b8next = (b7 << 19) | (b7 >> 13);
+ 
+	/* Round 2 */
+          a9 = a8 + ((b8 & (c8 | d8)) | (c8 & d8)) + buff[32*0 : 32*0 + 31] +root2; 
+          a10next = (a9<<3 ) | (a9>>29);
+          d9 = d8 + ((a10next & (b8 | c8)) | (b8 & c8)) + buff[32*4 : 32*4 + 31] +root2; 
+          d10next = (d9<<5 ) | (d9>>27);
+          c9 = c8 + ((d10next & (a10next | b8)) | (a10next & b8)) + buff[32*8 : 32*8 + 31] +root2; 
+          c10next = (c9<<9 ) | (c9>>23);
+          b9 = b8 + ((c10next & (d10next | a10next)) | (d10next & a10next)) + buff[32*12 : 32*12 + 31]+root2; 
+          b10next = (b9<<13) | (b9>>19);
+ 
+          a11 = a10 + ((b10 & (c10 | d10)) | (c10 & d10)) + buff[32*1 : 32*1 + 31] +root2; 
+          a12next = (a11<<3 ) | (a11>>29);
+          d11 = d10 + ((a12next & (b10 | c10)) | (b10 & c10)) + buff[32*5 : 32*5 + 31] +root2; 
+          d12next = (d11<<5 ) | (d11>>27);
+          c11 = c10 + ((d12next & (a12next | b10)) | (a12next & b10)) + buff[32*9 : 32*9 + 31] +root2; 
+          c12next = (c11<<9 ) | (c11>>23);
+          b11 = b10 + ((c12next & (d12next | a12next)) | (d12next & a12next)) + buff[32*13 : 32*13 + 31]+root2; 
+          b12next = (b11<<13) | (b11>>19);
+ 
+          a13 = a12 + ((b12 & (c12 | d12)) | (c12 & d12)) + buff[32*2 : 32*2 + 31] +root2; 
+          a14next = (a13<<3 ) | (a13>>29);
+          d13 = d12 + ((a14next & (b12 | c12)) | (b12 & c12)) + buff[32*6 : 32*6 + 31] +root2; 
+          d14next = (d13<<5 ) | (d13>>27);
+          c13 = c12 +((d14next & (a14next | b12)) | (a14next & b12)) + buff[32*10 : 32*10 + 31]+root2; 
+          c14next = (c13<<9 ) | (c13>>23);
+          b13 = b12 + ((c14next & (d14next | a14next)) | (d14next & a14next)) + buff[32*14 : 32*14 + 31]+root2; 
+          b14next = (b13<<13) | (b13>>19);
+ 
+          a15 = a14 + ((b14 & (c14 | d14)) | (c14 & d14)) + buff[32*3 : 32*3 + 31] +root2; 
+          a16next = (a15<<3 ) | (a15>>29);
+          d15 = d14 + ((a16next & (b14 | c14)) | (b14 & c14)) + buff[32*7 : 32*7 + 31] +root2; 
+          d16next = (d15<<5 ) | (d15>>27);
+          c15 = c14 + ((d16next & (a16next | b14)) | (a16next & b14)) + buff[32*11 : 32*11 + 31]+root2; 
+          c16next = (c15<<9 ) | (c15>>23);
+          b15 = b14 + ((c16next & (d16next | a16next)) | (d16next & a16next)) + buff[32*15 : 32*15 + 31]+root2; 
+          b16next = (b15<<13) | (b15>>19);
+ 
+	/* Round 3 */
+          a17 = a16 + (d16 ^ c16 ^ b16) + buff[32*0 : 32*0 + 31]  +  root3; 
+          a18next = (a17 << 3 ) | (a17 >> 29);
+          d17 = d16 + (c16 ^ b16 ^ a18next) + buff[32*8 : 32*8 + 31]  +  root3; 
+          d18next = (d17 << 9 ) | (d17 >> 23);
+          c17 = c16 + (b16 ^ a18next ^ d18next) + buff[32*4 : 32*4 + 31]  +  root3; 
+          c18next = (c17 << 11) | (c17 >> 21);
+          b17 = b16 + (a18next ^ d18next ^ c18next) + buff[32*12 : 32*12 + 31] +  root3; 
+          b18next = (b17 << 15) | (b17 >> 17);
+ 
+          a19 = a18 + (d18 ^ c18 ^ b18) + buff[32*2 : 32*2 + 31]  +  root3; 
+          a20next = (a19 << 3 ) | (a19 >> 29);
+          d19 = d18 + (c18 ^ b18 ^ a20next) + buff[32*10 : 32*10 + 31] +  root3; 
+          d20next = (d19 << 9 ) | (d19 >> 23);
+          c19 = c18 + (b18 ^ a20next ^ d20next) + buff[32*6 : 32*6 + 31]  +  root3; 
+          c20next = (c19 << 11) | (c19 >> 21);
+          b19 = b18 + (a20next ^ d20next ^ c20next) + buff[32*14 : 32*14 + 31] +  root3; 
+          b20next = (b19 << 15) | (b19 >> 17);
+ 
+          a21 = a20 + (d20 ^ c20 ^ b20) + buff[32*1 : 32*1 + 31]  +  root3; 
+          a22next = (a21 << 3 ) | (a21 >> 29);
+          d21 = d20 + (c20 ^ b20 ^ a22next) + buff[32*9 : 32*9 + 31]  +  root3; 
+          d22next = (d21 << 9 ) | (d21 >> 23);
+          c21 = c20 + (b20 ^ a22next ^ d22next) + buff[32*5 : 32*5 + 31]  +  root3; 
+          c22next = (c21 << 11) | (c21 >> 21);
+          b21 = b20 + (a22next ^ d22next ^ c22next) + buff[32*13 : 32*13 + 31] +  root3; 
+          b22next = (b21 << 15) | (b21 >> 17);
+ 
+          a23 = a22 + (d22 ^ c22 ^ b22) + buff[32*3 : 32*3 + 31]  +  root3; 
+          a24next = (a23 << 3 ) | (a23 >> 29);
+          d23 = d22 + (c22 ^ b22 ^ a24next) + buff[32*11 : 32*11 + 31] +  root3; 
+          d24next = (d23 << 9 ) | (d23 >> 23);
+          c23 = c22 + (b22 ^ a24next ^ d24next) + buff[32*7 : 32*7 + 31]  +  root3; 
+          c24next = (c23 << 11) | (c23 >> 21);
+          b23 = b22 + (a24next ^ d24next ^ c24next) + buff[32*15 : 32*15 + 31] +  root3; 
+          b24next = (b23 << 15) | (b23 >> 17);
+ 
+          temphash[0:31] = a24 + ai;
+          temphash[32:63] = b24 + bi;
+          temphash[64:95] = c24 + ci;
+          temphash[96:127] = d24 + di;
+          
+          hash[0*8:1*8 - 1] = temphash[3*8:4*8 - 1];
+          hash[1*8:2*8 - 1] = temphash[2*8:3*8 - 1];
+          hash[2*8:3*8 - 1] = temphash[1*8:2*8 - 1];
+          hash[3*8:4*8 - 1] = temphash[0*8:1*8 - 1];
+          
+          hash[4*8:5*8 - 1] = temphash[7*8:8*8 - 1];
+          hash[5*8:6*8 - 1] = temphash[6*8:7*8 - 1];
+          hash[6*8:7*8 - 1] = temphash[5*8:6*8 - 1];
+          hash[7*8:8*8 - 1] = temphash[4*8:5*8 - 1];
+          
+          hash[8*8:9*8 - 1] = temphash[11*8:12*8 - 1];
+          hash[9*8:10*8 - 1] = temphash[10*8:11*8 - 1];
+          hash[10*8:11*8 - 1] = temphash[9*8:10*8 - 1];
+          hash[11*8:12*8 - 1] = temphash[8*8:9*8 - 1];
+          
+          hash[12*8:13*8 - 1] = temphash[15*8:16*8 - 1];
+          hash[13*8:14*8 - 1] = temphash[14*8:15*8 - 1];
+          hash[14*8:15*8 - 1] = temphash[13*8:14*8 - 1];
+          hash[15*8:16*8 - 1] = temphash[12*8:13*8 - 1];
+          
+
+        end
+  always_ff @ (posedge clk, negedge n_rst) begin
+    if(n_rst == 0 ) begin 
+      a2 <= 0;
+      b2 <= 0;
+      c2 <= 0;
+      d2 <= 0;
+      a4 <= 0;
+      b4 <= 0;
+      c4 <= 0;
+      d4 <= 0;
+      a6 <= 0;
+      b6 <= 0;
+      c6 <= 0;
+      d6 <= 0;
+      a8 <= 0;
+      b8 <= 0;
+      c8 <= 0;
+      d8 <= 0;
+      a10 <= 0;
+      b10 <= 0;
+      c10 <= 0;
+      d10 <= 0;
+      a12 <= 0;
+      b12 <= 0;
+      c12 <= 0;
+      d12 <= 0;
+      a14 <= 0;
+      b14 <= 0;
+      c14 <= 0;
+      d14 <= 0;
+      a16 <= 0;
+      b16 <= 0;
+      c16 <= 0;
+      d16 <= 0;
+      a18 <= 0;
+      b18 <= 0;
+      c18 <= 0;
+      d18 <= 0;
+      a20 <= 0;
+      b20 <= 0;
+      c20 <= 0;
+      d20 <= 0;
+      a22 <= 0;
+      b22 <= 0;
+      c22 <= 0;
+      d22 <= 0;
+      a24 <= 0;
+      b24 <= 0;
+      c24 <= 0;
+      d24 <= 0;
+    end
+    else begin
+      a2 <= a2next;
+      b2 <= b2next;
+      c2 <= c2next;
+      d2 <= d2next;
+      a4 <= a4next;
+      b4 <= b4next;
+      c4 <= c4next;
+      d4 <= d4next;
+      a6 <= a6next;
+      b6 <= b6next;
+      c6 <= c6next;
+      d6 <= d6next;
+      a8 <= a8next;
+      b8 <= b8next;
+      c8 <= c8next;
+      d8 <= d8next;
+      a10 <= a10next;
+      b10 <= b10next;
+      c10 <= c10next;
+      d10 <= d10next;
+      a12 <= a12next;
+      b12 <= b12next;
+      c12 <= c12next;
+      d12 <= d12next;
+      a14 <= a14next;
+      b14 <= b14next;
+      c14 <= c14next;
+      d14 <= d14next;
+      a16 <= a16next;
+      b16 <= b16next;
+      c16 <= c16next;
+      d16 <= d16next;
+      a18 <= a18next;
+      b18 <= b18next;
+      c18 <= c18next;
+      d18 <= d18next;
+      a20 <= a20next;
+      b20 <= b20next;
+      c20 <= c20next;
+      d20 <= d20next;
+      a22 <= a22next;
+      b22 <= b22next;
+      c22 <= c22next;
+      d22 <= d22next;
+      a24 <= a24next;
+      b24 <= b24next;
+      c24 <= c24next;
+      d24 <= d24next;
+    end
+  end
+endmodule

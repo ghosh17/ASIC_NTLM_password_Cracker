@@ -1,0 +1,24 @@
+
+module Clock_Divider
+(
+  input wire clk,
+  input wire n_rst,
+  output wire clk_div
+);
+
+reg [2:0] count;
+
+
+always @ (posedge clk, negedge n_rst)
+begin
+  if(n_rst == 1'b0)
+    count <= 3'd0;
+  else 
+    if(count == 3'd5)
+      count <= 3'd0;
+  else
+    count <= count + 1;
+    
+end
+
+assign out_clk = (count == 3'd5);

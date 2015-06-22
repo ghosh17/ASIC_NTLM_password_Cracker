@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>ModelSim Coverage Report</title>
+  <link type="text/css" rel="StyleSheet" href="../css/mtitree.css"/>
+  <link type="text/css" rel="StyleSheet" href="../css/ucdb2html.css"/>
+  <script type="text/javascript" src="../scripts/mtitree.js"></script>
+  <script type="text/javascript">
+  <!--
+  function openAll() {
+    if (document.getElementById('pane1').style.display != 'none') t.openAll();
+    if (document.getElementById('pane2').style.display != 'none') d.openAll();
+    if (document.getElementById('pane3').style.display != 'none') u.openAll();
+  }
+  function closeAll() {
+    if (document.getElementById('pane1').style.display != 'none') t.closeAll();
+    if (document.getElementById('pane2').style.display != 'none') d.closeAll();
+    if (document.getElementById('pane3').style.display != 'none') u.closeAll();
+  }
+  function disableAll() {
+    document.getElementById('pane1').style.display='none';
+    document.getElementById('pane2').style.display='none';
+    document.getElementById('pane3').style.display='none';
+  }
+  function buttonsOff() {
+    document.getElementById('button1').className='button_off';
+    document.getElementById('button2').className='button_off';
+    document.getElementById('button3').className='button_off';
+  }
+  function drawTo(c) {
+    switch (c) {
+      case 1: t.drawTreeTo(document.getElementById('pane1')); break;
+      case 2: d.drawTreeTo(document.getElementById('pane2')); break;
+      case 3: u.drawTreeTo(document.getElementById('pane3')); break;
+    }
+  }
+  function select(c) {
+    disableAll(); document.getElementById('pane'   + c).style.display='';
+    buttonsOff(); document.getElementById('button' + c).className='button_on';
+    setTimeout('drawTo(' + c + ')', 500);
+  }
+  // -->
+  </script>
+</head>
+<body>
+  <table class="buttons" cellspacing="2" cellpadding="2" width="100%"><tr>
+    <td width="75" class="button_off" id="button1"
+        title="Select testplan tree" onclick="select('1')">Testplan</td>
+    <td width="75" class="button_off" id="button2"
+        title="Select design tree" onclick="select('2')">Design</td>
+    <td width="75" class="button_off" id="button3"
+        title="Select design unit list" onclick="select('3')">DesUnits</td>
+    <td class="invisible">&nbsp;</td><!-- spacer -->
+  </tr></table><hr/>
+  <div class="pane" id="pane1" style="display:none;">
+  <script type="text/javascript">
+  <!--
+    t = new Tree('t');
+    
+    if (t.length() > 0) {
+      document.getElementById('pane1').style.display='';
+      document.getElementById('button1').className='button_on';
+      document.write(t);
+    }
+  //-->
+  </script>
+  </div>
+  <div class="pane" id="pane2" style="display:none;">
+  <script type="text/javascript">
+  <!--
+    d = new Tree('d');
+    d.add(1, 0, 'tb_controller', 'z000012.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(2, 1, 'DUT', 'z000338.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(3, 2, 'GG', 'z001368.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(4, 3, 'RESET_LOGIC (no coverage)', null, '', '../icons/unknown.png', 'Unknown');
+d.add(5, 3, 'NEXT_LOGIC (no coverage)', null, '', '../icons/unknown.png', 'Unknown');
+d.add(6, 2, 'CMP', 'z002198.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(7, 2, 'NTLM', 'z002210.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(8, 1, 'RAM', 'z009152.htm', '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(9, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(10, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(11, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(12, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(13, 8, '"/=" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(14, 8, '"=" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(15, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(16, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(17, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(18, 8, '"&" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(19, 8, '"/=" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(20, 8, '"=" (no coverage)', null, '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(21, 8, 'MEM', 'z009448.htm', '', '../icons/square-dkBlue.png', 'VHDL');
+d.add(22, 1, 'TX', 'z009726.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(23, 22, 'pass1', 'z009761.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(24, 22, 'flex1', 'z009782.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+d.add(25, 24, 'RESET_LOGIC (no coverage)', null, '', '../icons/unknown.png', 'Unknown');
+d.add(26, 24, 'ROll_LOGIC (no coverage)', null, '', '../icons/unknown.png', 'Unknown');
+d.add(27, 24, 'NEXT_LOGIC (no coverage)', null, '', '../icons/unknown.png', 'Unknown');
+
+    if ((d.length() > 0) && (t.length() < 1)) {
+      document.getElementById('pane2').style.display='';
+      document.getElementById('button2').className='button_on';
+      document.write(d);
+    }
+  //-->
+  </script>
+  </div>
+  <div class="pane" id="pane3" style="display:none;">
+  <script type="text/javascript">
+  <!--
+    u = new Tree('u');
+    u.add(1, 0, 'work.tb_controller', 'z000002.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(2, 0, 'work.controller', 'z000003.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(3, 0, 'work.generate_guess', 'z000004.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(4, 0, 'work.Compare', 'z000005.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(5, 0, 'work.Calculate_NTLM_reg', 'z000006.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(6, 0, 'work.tx_data', 'z000007.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(7, 0, 'work.flex_pts_sr', 'z000008.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(8, 0, 'work.flex_counter', 'z000009.htm', '', '../icons/square-ltBlue.png', 'SystemVerilog');
+u.add(9, 0, 'work.on_chip_sram_wrapper(wrapper)', 'z000010.htm', '', '../icons/square-dkBlue.png', 'VHDL');
+u.add(10, 0, '/home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim.simple_scale_mem(scaleable_memory)', 'z000011.htm', '', '../icons/square-dkBlue.png', 'VHDL');
+
+    // document.write(u);
+  //-->
+  </script>
+  <h3>Loading...</h3>
+  </div>
+  
+</body>
+</html>

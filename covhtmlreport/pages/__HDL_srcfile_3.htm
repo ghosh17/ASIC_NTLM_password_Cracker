@@ -1,0 +1,36 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>ModelSim Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span>`<span class="keyattr">timescale</span>%s%1<span class="keyvalu">ns</span>%s%/%s%10<span class="keyvalu">ps</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span><span class="keyword">module</span>%s%Compare<br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span>(<br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%<span class="keyword">wire</span>%s%[0:8191]%s%fucktonofhashes,<br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span>%s%%s%%t%<span class="keyword">input</span>%s%<span class="keyword">wire</span>%s%[0:127]%s%outputhash,<br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">reg</span>%s%[0:6]%s%match<br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span>);<br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span>%s%%s%<span class="keyword">always_comb</span>%s%<span class="keyword">begin</span><br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span>%s%%s%%s%%s%match%s%=%s%64;<br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span>%s%%s%%s%%s%<span class="keyword">if</span>(fucktonofhashes[0*128:0*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%0;<br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span>%s%%s%%s%%s%<span class="keyword">if</span>(fucktonofhashes[1*128:1*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%1;<br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span>%s%%s%%s%%s%<span class="keyword">if</span>(fucktonofhashes[2*128:2*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%2;<br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[3*128:3*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%3;<br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[4*128:4*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%4;<br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[5*128:5*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%5;<br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[6*128:6*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%6;<br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[7*128:7*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%7;<br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[8*128:8*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%8;<br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[9*128:9*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%9;<br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>(fucktonofhashes[10*128:10*128%s%+%s%127]%s%==%s%outputhash)match%s%=%s%10;<br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span>%s%%s%%s%%s%%s%%s%<br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span>%s%%s%<span class="keyword">end</span><br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span><span class="keyword">endmodule</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,346 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-504.12.2.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim +no_glitch_msg -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -coverage -i -t ps mapped_work.tb_Calculate_NTLM_reg 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: mapped/Calculate_NTLM_reg.v(35859): (vopt-2685) [TFMPC] - Too few port connections for 'add_377'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35859): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35864): (vopt-2685) [TFMPC] - Too few port connections for 'add_376'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35864): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35869): (vopt-2685) [TFMPC] - Too few port connections for 'add_375'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35869): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35874): (vopt-2685) [TFMPC] - Too few port connections for 'add_374'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35874): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35882): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_301_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35882): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35890): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_310_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35890): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35898): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_319_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35898): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35906): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_328_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35906): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35910): (vopt-2685) [TFMPC] - Too few port connections for 'add_291'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35910): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35914): (vopt-2685) [TFMPC] - Too few port connections for 'add_282_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35914): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35918): (vopt-2685) [TFMPC] - Too few port connections for 'add_293'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35918): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35922): (vopt-2685) [TFMPC] - Too few port connections for 'add_284'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35922): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35927): (vopt-2685) [TFMPC] - Too few port connections for 'add_297'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35927): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35932): (vopt-2685) [TFMPC] - Too few port connections for 'add_288'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35932): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35937): (vopt-2685) [TFMPC] - Too few port connections for 'add_286'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35937): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35945): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_338_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35945): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35953): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_347_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35953): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35961): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_356_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35961): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35969): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_365_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35969): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35977): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_340_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35977): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35985): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_349_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35985): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35993): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_358_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(35993): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36001): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_367_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36001): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36009): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_330_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36009): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36017): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_342_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36017): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36025): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_351_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36025): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36033): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_360_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36033): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36041): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_369_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36041): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36049): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_305_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36049): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36057): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_314_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36057): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36065): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_323_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36065): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36073): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_332_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36073): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36087): (vopt-2685) [TFMPC] - Too few port connections for 'add_264'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36087): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36102): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_303_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36102): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36117): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_312_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36117): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36132): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_321_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36132): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36140): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_303_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36140): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36148): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_312_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36148): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36156): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_321_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36156): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36165): (vopt-2685) [TFMPC] - Too few port connections for 'add_273'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36165): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36174): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_369_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36174): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36188): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_342_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36188): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36202): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_351_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36202): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36216): (vopt-2685) [TFMPC] - Too few port connections for 'add_2_root_add_0_root_add_360_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36216): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36225): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_342_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36225): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36234): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_351_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36234): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36244): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_360_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36244): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36252): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_305_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36252): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36260): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_314_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36260): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36268): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_323_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36268): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36276): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_332_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36276): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36283): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_301_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36283): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36291): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_310_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36291): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36299): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_319_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36299): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36307): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_328_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36307): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36316): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_301_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36316): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36326): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_310_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36326): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36336): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_319_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36336): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36346): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_328_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36346): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36356): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_338_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36356): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36366): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_347_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36366): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36376): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_356_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36376): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36386): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_365_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36386): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36395): (vopt-2685) [TFMPC] - Too few port connections for 'add_277'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36395): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36399): (vopt-2685) [TFMPC] - Too few port connections for 'add_273_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36399): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36408): (vopt-2685) [TFMPC] - Too few port connections for 'add_266'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36408): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36416): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_340_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36416): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36424): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_349_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36424): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36432): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_358_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36432): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36440): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_367_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36440): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36448): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_303_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36448): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36456): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_312_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36456): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36464): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_321_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36464): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36472): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_330_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36472): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36480): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_334_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36480): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36488): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_307_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36488): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36496): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_316_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36496): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36504): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_325_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36504): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36512): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_344_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36512): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36520): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_353_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36520): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36528): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_362_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36528): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36536): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_371_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36536): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36544): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_338_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36544): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36552): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_347_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36552): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36560): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_356_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36560): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36568): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_365_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36568): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36575): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_295_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36575): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36582): (vopt-2685) [TFMPC] - Too few port connections for 'add_0_root_add_0_root_add_295_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36582): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36590): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_307_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36590): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36599): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_316_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36599): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36607): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_334_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36607): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36617): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_344_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36617): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36627): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_362_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36627): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36637): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_371_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36637): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36646): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_325_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36646): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36656): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_0_root_add_353_3'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36656): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36663): (vopt-2685) [TFMPC] - Too few port connections for 'add_279_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36663): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36667): (vopt-2685) [TFMPC] - Too few port connections for 'add_275_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36667): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36676): (vopt-2685) [TFMPC] - Too few port connections for 'add_275'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36676): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36681): (vopt-2685) [TFMPC] - Too few port connections for 'add_277_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36681): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36695): (vopt-2685) [TFMPC] - Too few port connections for 'add_268'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36695): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36701): (vopt-2685) [TFMPC] - Too few port connections for 'add_270_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36701): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36710): (vopt-2685) [TFMPC] - Too few port connections for 'add_270'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36710): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36716): (vopt-2685) [TFMPC] - Too few port connections for 'add_264_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36716): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36725): (vopt-2685) [TFMPC] - Too few port connections for 'add_279'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36725): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36731): (vopt-2685) [TFMPC] - Too few port connections for 'add_268_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36731): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36737): (vopt-2685) [TFMPC] - Too few port connections for 'add_266_2'.  Expected 5, found 4.
+# ** Warning: mapped/Calculate_NTLM_reg.v(36737): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# Loading sv_std.std
+# Loading work.tb_Calculate_NTLM_reg(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr(metastabilitywrapperarch)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.prim(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr_core(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.latch(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xnor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx8(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi22x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor3x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.mux2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand3x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai22x1(behavioral)#1
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+add wave -position insertpoint  \
+sim:/tb_Calculate_NTLM_reg/tb_n_rst \
+sim:/tb_Calculate_NTLM_reg/tb_length \
+sim:/tb_Calculate_NTLM_reg/tb_instr \
+sim:/tb_Calculate_NTLM_reg/tb_hash \
+sim:/tb_Calculate_NTLM_reg/tb_d16 \
+sim:/tb_Calculate_NTLM_reg/tb_clk \
+sim:/tb_Calculate_NTLM_reg/tb_c16 \
+sim:/tb_Calculate_NTLM_reg/tb_b16 \
+sim:/tb_Calculate_NTLM_reg/tb_a16
+run 500 ns
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Internal Error: do_merge_inst_toggle_data: error in toggle lookup
+# Causality operation skipped due to absense of debug database file

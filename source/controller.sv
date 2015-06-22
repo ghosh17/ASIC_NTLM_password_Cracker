@@ -1,0 +1,242 @@
+
+
+module controller
+  (
+   input wire clk,
+   input wire n_rst,
+   output reg start_bit,
+   input wire [0:7] rx_in,
+   input wire data_ready,
+   input reg [0:6] match,
+   output reg [0:7] out_byte,
+   output reg [0:7] shift_byte,
+   output reg shift_out,
+   output reg read_enable,
+   output reg write_enable,
+   output reg [0:9] address,
+   input wire [0:127] read_data,
+   output reg [0:127] write_data,
+   input reg  [127:0] outstr,
+   output reg shift_en,
+   input wire data_ready_posedge,
+   input tx_done
+   );
+   //reg [127:0] guess;
+   reg [127:0] flip_guess;
+   reg [127:0] outputhash;
+   reg [0:6] clocked_match;
+   reg [0:127] clocked_str;
+   reg [0:127] clocked_read_data;
+   reg [0:127] clocked_read_data_next;
+   reg [0:127] strnext;
+   reg [0:9] read_address;
+   reg [0:9] read_next_address;
+   reg [0:3] byte_counter;
+   reg [0:3] byte_counter_next;
+   reg falling_edge_found;
+
+       
+	 typedef enum {IDLE, RECEIVING, SHIFT, STOP_OR_CONTINUE, GENERATE, SRAM_WRITE, SRAM_READ, TRANSMITTING, START_OUTPUT} stateType;
+   stateType state;
+   stateType next_state;
+  
+   
+   always_ff @ (posedge clk, negedge n_rst) begin
+    if (n_rst == 0) begin
+      state <= IDLE;
+      clocked_match <= 0;
+      clocked_str <= 0;
+      clocked_read_data <= 0;
+      read_address <= 0;
+      byte_counter <= 0;
+    end
+    else begin
+      state <= next_state;
+      clocked_match <= match;
+      clocked_str <= outstr;
+      clocked_read_data <= clocked_read_data_next;
+      read_address <= read_next_address;
+      byte_counter <= byte_counter_next;
+    end
+  end
+  always_comb begin
+    next_state = state;
+    read_next_address = read_address;
+    start_bit = 0;
+    shift_out = 0;
+    shift_en = 0;
+    byte_counter_next = 0;
+    shift_byte = 0;
+    write_enable = 0;
+    read_enable = 0;
+    address = 0;
+    write_data = 0;
+    out_byte = 0;
+    clocked_read_data_next = 0;
+    case(state)
+      IDLE: begin
+        if(rx_in == 8'b10101010 && data_ready_posedge == 1) next_state = RECEIVING; //start byte found
+        else next_state = IDLE;
+        shift_en = 0;
+        byte_counter_next = 0;
+        clocked_read_data_next = 0;
+      end
+      SHIFT: begin
+        if(byte_counter == 15)begin
+          next_state = STOP_OR_CONTINUE;
+          byte_counter_next = 0;
+        end
+        else begin
+          next_state = RECEIVING;
+        end
+        shift_en = 1;
+        byte_counter_next = byte_counter + 1;
+        shift_byte = rx_in;
+        clocked_read_data_next = 0;
+      end
+      RECEIVING: begin
+        if(data_ready_posedge == 1)next_state = SHIFT;
+        else next_state = RECEIVING;
+        byte_counter_next = byte_counter;
+        shift_en = 0;
+        clocked_read_data_next = 0;
+      end
+      STOP_OR_CONTINUE: begin
+        if(rx_in == 8'b11101110 && data_ready_posedge == 1)next_state = GENERATE;//stop byte found
+        else if (rx_in == 8'b10001000 && data_ready_posedge == 1)next_state = RECEIVING; //continue byte found
+        else next_state = STOP_OR_CONTINUE;
+        byte_counter_next = 0;
+        shift_en = 0;
+        clocked_read_data_next = 0;
+      end
+      GENERATE: begin
+        if (rx_in == 8'b01101100) next_state = START_OUTPUT; //progress request byte found
+        else if (match != 64)next_state = SRAM_WRITE;
+        else next_state = GENERATE;
+        write_enable = 0;
+        read_enable = 0;
+        address = 0;
+        write_data = 0;
+        read_next_address = 0;
+        start_bit = 1;
+        clocked_read_data_next = 0;
+      end
+      SRAM_WRITE: begin
+        next_state = GENERATE;
+        write_enable = 1;
+        read_enable = 0;
+        address[0:5] = clocked_match[1:6]; //Are these indeces correct? Like do we want to write to 1111110000 cause that's what is being read for 'f'
+        address[6:9] = 0;
+        write_data = clocked_str;
+        read_next_address = 0;
+        clocked_read_data_next = 0;
+        start_bit = 1;
+      end
+      TRANSMITTING: begin
+        if(tx_done == 1)next_state = SRAM_READ;
+        else next_state = TRANSMITTING;
+        shift_out = 1;
+        write_enable = 0;
+        read_enable = 0; 
+        address = 0;
+        read_next_address = read_address;
+        clocked_read_data_next = clocked_read_data;
+        if((read_address) % 16 == 0)out_byte = clocked_read_data[0:7]; //Should this be read_data? Cause read_data would be the line coming from SRAM?
+        if((read_address) % 16 == 1)out_byte = clocked_read_data[8:15];
+        if((read_address) % 16 == 2)out_byte = clocked_read_data[16:23];
+        if((read_address) % 16 == 3)out_byte = clocked_read_data[24:31];
+        if((read_address) % 16 == 4)out_byte = clocked_read_data[32:39];
+        if((read_address) % 16 == 5)out_byte = clocked_read_data[40:47];
+        if((read_address) % 16 == 6)out_byte = clocked_read_data[48:55];
+        if((read_address) % 16 == 7)out_byte = clocked_read_data[56:63];
+        if((read_address) % 16 == 8)out_byte = clocked_read_data[64:71];
+        if((read_address) % 16 == 9)out_byte = clocked_read_data[72:79];
+        if((read_address) % 16 == 10)out_byte = clocked_read_data[80:87];
+        if((read_address) % 16 == 11)out_byte = clocked_read_data[88:95];
+        if((read_address) % 16 == 12)out_byte = clocked_read_data[96:103];
+        if((read_address) % 16 == 13)out_byte = clocked_read_data[104:111];
+        if((read_address) % 16 == 14)out_byte = clocked_read_data[112:119];
+        if((read_address) % 16 == 15)out_byte = clocked_read_data[120:127];
+          
+      end
+      SRAM_READ: begin
+        write_enable = 0;
+        shift_out = 1;
+        out_byte = 0;
+        address = read_address +1;
+        clocked_read_data_next = read_data;
+        read_next_address = read_address + 1;
+        //out_byte = 0;
+        /*for(i = 0; i <= 63; i = i + 1)
+        begin
+          if((read_address) == i)out_byte = clocked_str[8*i +:7];
+        end
+        */
+        if((read_address + 1) % 16 == 0)read_enable = 1; //Read in new data after shifting out 16 bytes
+        else read_enable = 0; 
+        if(read_address == 1023)
+          next_state = GENERATE;
+        else next_state = TRANSMITTING;
+      end
+      START_OUTPUT: begin //Wake Up the Transmitter
+        next_state = TRANSMITTING;
+        out_byte = 0;
+        read_enable = 1;
+        write_enable = 0;
+        shift_out = 0;
+        address = read_address;
+        clocked_read_data_next = read_data;
+        read_next_address = read_address;
+      end
+
+      /*default: begin
+        if(start_bit_detected == 1)next_state = TIMER_ENABLE;
+        else next_state = IDLE;
+        sbc_clear = 0;
+        sbc_enable = 0;
+        load_buffer = 0;
+        enable_timer = 0;
+      end*/
+      
+    /*
+     // always @ (state, start_bit_detected, packet_done, framing_error) begin : State_Logic
+      nextstate = state;
+    
+      case(state)
+        IDLE: begin
+          if(start_bit_detected == 1'b0) begin
+            nextstate = IDLE;
+          end else begin
+            nextstate = READ;
+          end
+        end
+      
+        READ: begin
+          if(packet_done == 1'b0) begin
+            nextstate = READ;
+          end else begin
+            nextstate = SET;
+          end
+        end
+      
+        SET: begin
+          nextstate = CHK;
+        end
+      
+        CHK: begin
+          if(framing_error == 1'b0) begin
+            nextstate = LOAD;
+          end else begin
+            nextstate = IDLE;
+          end
+        end
+      
+        LOAD: begin
+          nextstate = IDLE;
+        end
+      endcase
+    //end
+      */  
+    endcase
+  end
+endmodule

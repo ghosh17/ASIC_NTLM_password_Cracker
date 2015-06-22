@@ -1,0 +1,82 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-504.12.2.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim +no_glitch_msg -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -coverage -i -t ps source_work.tb_controller 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: source/tb_controller.sv(81): (vopt-2241) Connection width does not match width of port 'rx_in'. The port definition is at: source/controller.sv(8).
+# ** Warning: source/tb_controller.sv(81): (vopt-2241) Connection width does not match width of port 'shift_byte'. The port definition is at: source/controller.sv(12).
+# ** Warning: source/tb_controller.sv(82): (vopt-2241) Connection width does not match width of port 'guess'. The port definition is at: source/generate_guess.sv(18).
+# ** Note: (vopt-143) Recognized 1 FSM in module "controller(fast)".
+# Loading sv_std.std
+# Loading work.tb_controller(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.on_chip_sram_wrapper(wrapper)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim.simple_scale_mem(scaleable_memory)#1
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'init_file_number'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'dump_file_number'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'mem_clr'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'mem_init'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'mem_dump'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'start_address'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'last_address'.
+#         Region: /tb_controller/RAM
+# ** Warning: (vsim-8822) source/tb_controller.sv(100): [TFMPC] - Missing Verilog connection for formal VHDL port 'verbose'.
+#         Region: /tb_controller/RAM
+add wave -position insertpoint  \
+sim:/tb_controller/sys_in_byte \
+sim:/tb_controller/sys_tx_in \
+sim:/tb_controller/tb_address \
+sim:/tb_controller/tb_allhashes \
+sim:/tb_controller/tb_clear \
+sim:/tb_controller/tb_clk_div \
+sim:/tb_controller/tb_data_ready \
+sim:/tb_controller/tb_data_ready_posedge \
+sim:/tb_controller/tb_end_add \
+sim:/tb_controller/tb_flip_guess \
+sim:/tb_controller/tb_framing_error \
+sim:/tb_controller/tb_guess \
+sim:/tb_controller/tb_match \
+sim:/tb_controller/tb_mem_clr \
+sim:/tb_controller/tb_mem_dump \
+sim:/tb_controller/tb_mem_init \
+sim:/tb_controller/tb_n_rst \
+sim:/tb_controller/tb_out_byte \
+sim:/tb_controller/tb_outputhash \
+sim:/tb_controller/tb_outstr \
+sim:/tb_controller/tb_over_run_error \
+sim:/tb_controller/tb_progress_request_byte_detected \
+sim:/tb_controller/tb_read_data \
+sim:/tb_controller/tb_read_enable \
+sim:/tb_controller/tb_rx_in \
+sim:/tb_controller/tb_rx_out \
+sim:/tb_controller/tb_shift_byte \
+sim:/tb_controller/tb_shift_out \
+sim:/tb_controller/tb_start_add \
+sim:/tb_controller/tb_start_bit \
+sim:/tb_controller/tb_strlen \
+sim:/tb_controller/tb_tx_done \
+sim:/tb_controller/tb_tx_done_flag \
+sim:/tb_controller/tb_write_data \
+sim:/tb_controller/tb_write_enable \
+sim:/tb_controller/tx_out
+
+run 50000 ns
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_controller/RAM/MEM

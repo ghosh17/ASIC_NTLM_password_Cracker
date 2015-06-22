@@ -1,0 +1,166 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>ModelSim Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span><span class="keyword">library</span>%s%ieee;<br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><span class="keyword">use</span>%s%ieee.std_logic_1164.<span class="keyword">all</span>;<br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="keyword">use</span>%s%ieee.numeric_std.<span class="keyword">all</span>;<br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span><br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span><span class="keyword">library</span>%s%ECE337_IP;<br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span><span class="keyword">use</span>%s%ECE337_IP.<span class="keyword">all</span>;<br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span><br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span><span class="keyword">entity</span>%s%on_chip_sram_wrapper%s%<span class="keyword">is</span><br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span>%t%<span class="keyword">generic</span><br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span>%t%(%s%<span class="comment">--%s%Generics%s%are%s%the%s%same%s%as%s%parameters%s%in%s%verilog,%s%you%s%set%s%them%s%during%s%portmapping</span><br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span>%t%%t%<span class="comment">--%s%with%s%verilog's%s%parameter%s%mapping%s%syntax%s%(google%s%it)%s%or%s%you%s%can%s%simply%s%create%s%a</span><br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span>%t%%t%<span class="comment">--%s%separate%s%copy%s%of%s%this%s%wrapper%s%for%s%each%s%on-chip%s%sram%s%instance%s%and%s%modify%s%them%s%below.</span><br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span><br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span>%t%%t%W_ADDR_SIZE_BITS%s%%s%:%s%<span class="keytype">natural</span>%s%:=%s%10;%s%%s%%s%%s%<span class="comment">--%s%Address%s%bus%s%size%s%in%s%bits/pins%s%with%s%addresses%s%corresponding%s%to%s%</span><br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%the%s%starting%s%word%s%of%s%the%s%accesss</span><br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%t%%t%W_WORD_SIZE_BYTES%s%:%s%<span class="keytype">natural</span>%s%:=%s%1;%s%%s%%s%%t%<span class="comment">--%s%Word%s%size%s%of%s%the%s%memory%s%in%s%bytes</span><br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span>%t%%t%W_DATA_SIZE_WORDS%s%:%s%<span class="keytype">natural</span>%s%:=%s%16;%s%%s%%s%%t%<span class="comment">--%s%Data%s%bus%s%size%s%in%s%"words"</span><br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span>%t%%t%W_READ_DELAY%s%%s%%s%%s%%s%%s%:%s%<span class="keytype">time</span>%s%%s%%s%%s%:=%s%5%s%ns;%s%%t%<span class="comment">--%s%Delay/latency%s%per%s%read%s%access%s%(total%s%time%s%between%s%start%s%of%s%supplying%s%address%s%and%s%when%s%the%s%data%s%read%s%from%s%memory%s%appears%s%on%s%the%s%r_data%s%port)</span><br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%Keep%s%the%s%5%s%ns%s%delay%s%for%s%0.5u%s%on-chip%s%SRAM</span><br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span>%t%%t%W_WRITE_DELAY%s%%s%%s%%s%%s%:%s%<span class="keytype">time</span>%s%%s%%s%%s%:=%s%5%s%ns%s%%t%<span class="comment">--%s%Delay/latency%s%per%s%write%s%access%s%(total%s%time%s%between%s%start%s%of%s%supplying%s%address%s%and%s%when%s%the%s%w_data%s%value%s%is%s%written%s%into%s%memory)</span><br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%Keep%s%the%s%5%s%ns%s%delay%s%for%s%0.5u%s%on-chip%s%SRAM</span><br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span>%t%);<br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span>%t%<span class="keyword">port</span><br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span>%t%(<br/>
+<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span>%t%%t%<span class="comment">--%s%Test%s%bench%s%control%s%signals</span><br/>
+<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span>%t%%t%init_file_number%t%:%s%<span class="keyattr">in</span>%s%<span class="keytype">natural</span>;%t%<span class="comment">--%s%The%s%number%s%of%s%the%s%initialization%s%file%s%name%s%to%s%use%s%during%s%the%s%next%s%requested%s%memory%s%init</span><br/>
+<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%Only%s%use%s%values%s%from%s%0%s%thru%s%(2^31%s%-%s%1)%s%as%s%naturals%s%are%s%simply%s%the%s%postive%s%range%s%of%s%a%s%signed%s%32-bit%s%integer</span><br/>
+<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span>%t%%t%dump_file_number%t%:%s%<span class="keyattr">in</span>%s%<span class="keytype">natural</span>;%t%<span class="comment">--%s%The%s%number%s%of%s%the%s%dump%s%file%s%name%s%to%s%use%s%during%s%the%s%next%s%requested%s%memory%s%dump</span><br/>
+<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%Only%s%use%s%values%s%from%s%0%s%thru%s%(2^31%s%-%s%1)%s%as%s%naturals%s%are%s%simply%s%the%s%postive%s%range%s%of%s%a%s%signed%s%32-bit%s%integer</span><br/>
+<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span>%t%%t%mem_clr%s%%s%%s%%s%%s%%s%%s%:%s%<span class="keyattr">in</span>%s%%s%<span class="keytype">boolean</span>;%t%%t%<span class="comment">--%s%Strobe%s%this%s%for%s%at%s%least%s%1%s%simulation%s%timestep%s%to%s%zero%s%all%s%memory%s%contents</span><br/>
+<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span>%s%%s%%s%%s%mem_init%s%%s%%s%%s%%s%%s%:%s%<span class="keyattr">in</span>%s%%s%<span class="keytype">boolean</span>;%t%%t%<span class="comment">--%s%Strobe%s%this%s%for%s%at%s%least%s%1%s%simulation%s%timestep%s%to%s%set%s%the%s%values%s%for%s%addresses</span><br/>
+<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%currently%s%selected%s%init%s%file%s%to%s%their%s%corresponding%s%values%s%precribed%s%in%s%the%s%file</span><br/>
+<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span>%s%%s%%s%%s%mem_dump%s%%s%%s%%s%%s%%s%:%s%<span class="keyattr">in</span>%s%%s%<span class="keytype">boolean</span>;%t%%t%<span class="comment">--%s%Strobe%s%this%s%for%s%at%s%least%s%1%s%simulation%s%timestep%s%to%s%dump%s%all%s%values%s%modified%s%since</span><br/>
+<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%the%s%most%s%recent%s%mem_clr%s%activation.</span><br/>
+<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%Only%s%the%s%locations%s%between%s%the%s%"start_address"%s%and%s%"last_address"%s%(inclusive)%s%will%s%be%s%printed</span><br/>
+<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span>%s%%s%%s%%s%start_address%s%:%s%<span class="keyattr">in</span>%s%%s%<span class="keytype">natural</span>;%t%%t%<span class="comment">--%s%The%s%first%s%address%s%to%s%start%s%dumping%s%memory%s%contents%s%from</span><br/>
+<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span>%s%%s%%s%%s%last_address%s%%s%:%s%<span class="keyattr">in</span>%s%%s%<span class="keytype">natural</span>;%t%%t%<span class="comment">--%s%The%s%last%s%address%s%to%s%dump%s%memory%s%contents%s%from</span><br/>
+<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span>%s%%s%%s%%s%verbose%s%%s%%s%%s%%s%%s%%s%:%s%<span class="keyattr">in</span>%s%%s%<span class="keytype">boolean</span>;%t%%t%<span class="comment">--%s%Active%s%high%s%enable%s%for%s%more%s%verbose%s%debugging%s%information</span><br/>
+<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span>%t%%t%<br/>
+<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span>%t%%t%<span class="comment">--%s%Memory%s%interface%s%signals%s%(read%s%enable,%s%write%s%enable,%s%address%s%of%s%first%s%word%s%in%s%the%s%access,%s%data%s%from%s%a%s%read,%s%data%s%supplied%s%for%s%a%s%write)</span><br/>
+<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span>%t%%t%read_enable%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic</span>;<br/>
+<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span>%t%%t%write_enable%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic</span>;<br/>
+<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span>%t%%t%address%t%%t%%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic_vector</span>((W_ADDR_SIZE_BITS%s%-%s%1)%s%<span class="keyword">downto</span>%s%0);<br/>
+<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span>%t%%t%read_data%t%%t%%t%:%s%<span class="keyattr">out</span>%t%<span class="keytype">std_logic_vector</span>(((W_DATA_SIZE_WORDS%s%*%s%W_WORD_SIZE_BYTES%s%*%s%8)%s%-%s%1)%s%<span class="keyword">downto</span>%s%0);<br/>
+<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>%t%%t%write_data%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic_vector</span>(((W_DATA_SIZE_WORDS%s%*%s%W_WORD_SIZE_BYTES%s%*%s%8)%s%-%s%1)%s%<span class="keyword">downto</span>%s%0)<br/>
+<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span>%t%);<br/>
+<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span><span class="keyword">end</span>%s%on_chip_sram_wrapper;<br/>
+<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span><br/>
+<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span><span class="keyword">architecture</span>%s%wrapper%s%<span class="keyword">of</span>%s%on_chip_sram_wrapper%s%<span class="keyword">is</span><br/>
+<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span><br/>
+<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span>%t%<span class="keyword">component</span>%s%simple_scale_mem%s%<span class="keyword">is</span><br/>
+<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span>%t%<span class="keyword">generic</span>%s%(<br/>
+<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span>%t%%t%%t%%t%%t%%t%<span class="comment">--%s%Memory%s%Model%s%parameters</span><br/>
+<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span>%t%%t%%t%%t%%t%%t%ADDR_SIZE_BITS%t%:%s%<span class="keytype">natural</span>%t%:=%s%6;%t%%t%<span class="comment">--%s%Address%s%bus%s%size%s%in%s%bits/pins%s%with%s%addresses%s%corresponding%s%to%s%</span><br/>
+<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span>%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%%t%<span class="comment">--%s%the%s%starting%s%word%s%of%s%the%s%accesss</span><br/>
+<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span>%t%%t%%t%%t%%t%%t%WORD_SIZE_BYTES%t%:%s%<span class="keytype">natural</span>%t%:=%s%1;%t%%t%%t%<span class="comment">--%s%Word%s%size%s%of%s%the%s%memory%s%in%s%bytes</span><br/>
+<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span>%t%%t%%t%%t%%t%%t%DATA_SIZE_WORDS%t%:%s%<span class="keytype">natural</span>%t%:=%s%16;%t%%t%%t%<span class="comment">--%s%Data%s%bus%s%size%s%in%s%"words"</span><br/>
+<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span>%t%%t%%t%%t%%t%%t%READ_DELAY%t%%t%%t%:%s%<span class="keytype">time</span>%t%%t%:=%s%5%s%ns;%t%<span class="comment">--%s%Delay/latency%s%per%s%read%s%access</span><br/>
+<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span>%t%%t%%t%%t%%t%%t%WRITE_DELAY%t%%t%%t%:%s%<span class="keytype">time</span>%t%%t%:=%s%5%s%ns%t%%t%<span class="comment">--%s%Delay/latency%s%per%s%write%s%access</span><br/>
+<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span>%t%%t%%t%%t%%t%);<br/>
+<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span>%t%<span class="keyword">port</span>%s%%t%(<br/>
+<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">--%s%Test%s%bench%s%control%s%signals</span><br/>
+<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span>%t%%t%%t%%t%%t%mem_clr%t%%t%%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">boolean</span>;<br/>
+<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span>%t%%t%%t%%t%%t%mem_init%t%%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">boolean</span>;<br/>
+<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span>%t%%t%%t%%t%%t%mem_dump%t%%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">boolean</span>;<br/>
+<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span>%t%%t%%t%%t%%t%verbose%t%%t%%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">boolean</span>;<br/>
+<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span>%t%%t%%t%%t%%t%init_filename%t%:%s%<span class="keyattr">in</span>%s%%t%<span class="keytype">string</span>;<br/>
+<a name="69"/><span style="color:red">%s%%s%%s%%s%69%s%%s%</span>%t%%t%%t%%t%%t%dump_filename%t%:%s%<span class="keyattr">in</span>%s%%t%<span class="keytype">string</span>;<br/>
+<a name="70"/><span style="color:red">%s%%s%%s%%s%70%s%%s%</span>%t%%t%%t%%t%%t%start_address%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">natural</span>;<br/>
+<a name="71"/><span style="color:red">%s%%s%%s%%s%71%s%%s%</span>%t%%t%%t%%t%%t%last_address%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">natural</span>;<br/>
+<a name="72"/><span style="color:red">%s%%s%%s%%s%72%s%%s%</span>%t%%t%%t%%t%%t%<br/>
+<a name="73"/><span style="color:red">%s%%s%%s%%s%73%s%%s%</span>%t%%t%%t%%t%%t%<span class="comment">--%s%Memory%s%interface%s%signals</span><br/>
+<a name="74"/><span style="color:red">%s%%s%%s%%s%74%s%%s%</span>%t%%t%%t%%t%%t%r_enable%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic</span>;<br/>
+<a name="75"/><span style="color:red">%s%%s%%s%%s%75%s%%s%</span>%t%%t%%t%%t%%t%w_enable%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic</span>;<br/>
+<a name="76"/><span style="color:red">%s%%s%%s%%s%76%s%%s%</span>%t%%t%%t%%t%%t%addr%t%%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic_vector</span>((ADDR_SIZE_BITS%s%-%s%1)%s%<span class="keyword">downto</span>%s%0);<br/>
+<a name="77"/><span style="color:red">%s%%s%%s%%s%77%s%%s%</span>%t%%t%%t%%t%%t%r_data%t%%t%:%s%<span class="keyattr">out</span>%t%<span class="keytype">std_logic_vector</span>(((DATA_SIZE_WORDS%s%*%s%WORD_SIZE_BYTES%s%*%s%8)%s%-%s%1)%s%<span class="keyword">downto</span>%s%0);<br/>
+<a name="78"/><span style="color:red">%s%%s%%s%%s%78%s%%s%</span>%t%%t%%t%%t%%t%w_data%t%%t%:%s%<span class="keyattr">in</span>%t%<span class="keytype">std_logic_vector</span>(((DATA_SIZE_WORDS%s%*%s%WORD_SIZE_BYTES%s%*%s%8)%s%-%s%1)%s%<span class="keyword">downto</span>%s%0)<br/>
+<a name="79"/><span style="color:red">%s%%s%%s%%s%79%s%%s%</span>%t%%t%%t%%t%);<br/>
+<a name="80"/><span style="color:red">%s%%s%%s%%s%80%s%%s%</span>%t%<span class="keyword">end</span>%s%<span class="keyword">component</span>%s%simple_scale_mem;<br/>
+<a name="81"/><span style="color:red">%s%%s%%s%%s%81%s%%s%</span><br/>
+<a name="82"/><span style="color:red">%s%%s%%s%%s%82%s%%s%</span>%t%<span class="comment">--%s%VHDL%s%strings%s%are%s%statically%s%allocated%s%so%s%you%s%need%s%to%s%have%s%all%s%filenames%s%be%s%the%s%same%s%size</span><br/>
+<a name="83"/><span style="color:red">%s%%s%%s%%s%83%s%%s%</span>%t%<span class="comment">--%s%Note:%s%VHDL%s%strings%s%use%s%whole%s%number%s%addressing%s%and%s%thus%s%start%s%off%s%at%s%1</span><br/>
+<a name="84"/><span style="color:red">%s%%s%%s%%s%84%s%%s%</span>%t%<span class="keyword">constant</span>%s%MAX_INIT_FILENAME_SIZE%t%:%s%<span class="keytype">natural</span>%t%:=%s%18;<br/>
+<a name="85"/><span style="color:red">%s%%s%%s%%s%85%s%%s%</span>%t%<span class="keyword">constant</span>%s%MAX_DUMP_FILENAME_SIZE%t%:%s%<span class="keytype">natural</span>%t%:=%s%18;<br/>
+<a name="86"/><span style="color:red">%s%%s%%s%%s%86%s%%s%</span>%t%<br/>
+<a name="87"/><span style="color:red">%s%%s%%s%%s%87%s%%s%</span>%t%<br/>
+<a name="88"/><span style="color:red">%s%%s%%s%%s%88%s%%s%</span>%t%<span class="comment">--%s%Declare%s%the%s%filename%s%array%s%type%s%(allow%s%the%s%number%s%of%s%filenames%s%to%s%be%s%determined%s%on%s%usage)</span><br/>
+<a name="89"/><span style="color:red">%s%%s%%s%%s%89%s%%s%</span>%t%<span class="keyword">type</span>%s%i_filenames%s%<span class="keyword">is</span>%s%<span class="keyword">array</span>(<span class="keytype">natural</span>%s%<span class="keyword">range</span>%s%&lt;&gt;)%s%<span class="keyword">of</span>%s%<span class="keytype">string</span>(1%s%<span class="keyword">to</span>%s%MAX_INIT_FILENAME_SIZE);<br/>
+<a name="90"/><span style="color:red">%s%%s%%s%%s%90%s%%s%</span>%t%<span class="keyword">type</span>%s%d_filenames%s%<span class="keyword">is</span>%s%<span class="keyword">array</span>(<span class="keytype">natural</span>%s%<span class="keyword">range</span>%s%&lt;&gt;)%s%<span class="keyword">of</span>%s%<span class="keytype">string</span>(1%s%<span class="keyword">to</span>%s%MAX_DUMP_FILENAME_SIZE);<br/>
+<a name="91"/><span style="color:red">%s%%s%%s%%s%91%s%%s%</span>%t%<br/>
+<a name="92"/><span style="color:red">%s%%s%%s%%s%92%s%%s%</span>%t%<span class="comment">--%s%Declare%s%and%s%define%s%filename%s%array%s%constants</span><br/>
+<a name="93"/><span style="color:red">%s%%s%%s%%s%93%s%%s%</span>%t%<span class="keyword">constant</span>%s%INIT_FILENAMES%t%:%s%i_filenames%t%:=<br/>
+<a name="94"/><span style="color:red">%s%%s%%s%%s%94%s%%s%</span>%t%(<br/>
+<a name="95"/><span style="color:red">%s%%s%%s%%s%95%s%%s%</span>%t%%t%<span class="literal">"example_init_1.txt"</span>,<br/>
+<a name="96"/><span style="color:red">%s%%s%%s%%s%96%s%%s%</span>%t%%t%<span class="literal">"example_init_2.txt"</span>,<br/>
+<a name="97"/><span style="color:red">%s%%s%%s%%s%97%s%%s%</span>%t%%t%<span class="literal">"example_init_3.txt"</span><br/>
+<a name="98"/><span style="color:red">%s%%s%%s%%s%98%s%%s%</span>%t%);<br/>
+<a name="99"/><span style="color:red">%s%%s%%s%%s%99%s%%s%</span>%t%<span class="keyword">constant</span>%s%DUMP_FILENAMES%t%:%s%d_filenames%t%:=<br/>
+<a name="100"/><span style="color:red">%s%%s%%s%100%s%%s%</span>%t%(<br/>
+<a name="101"/><span style="color:red">%s%%s%%s%101%s%%s%</span>%t%%t%<span class="literal">"example_dump_1.txt"</span>,<br/>
+<a name="102"/><span style="color:red">%s%%s%%s%102%s%%s%</span>%t%%t%<span class="literal">"example_dump_2.txt"</span>,<br/>
+<a name="103"/><span style="color:red">%s%%s%%s%103%s%%s%</span>%t%%t%<span class="literal">"example_dump_3.txt"</span><br/>
+<a name="104"/><span style="color:red">%s%%s%%s%104%s%%s%</span>%t%);<br/>
+<a name="105"/><span style="color:red">%s%%s%%s%105%s%%s%</span>%t%<br/>
+<a name="106"/><span style="color:red">%s%%s%%s%106%s%%s%</span>%t%<span class="comment">--%s%Declare%s%the%s%signals%s%that%s%will%s%be%s%connected%s%to%s%the%s%actual%s%SRAM%s%module</span><br/>
+<a name="107"/><span style="color:red">%s%%s%%s%107%s%%s%</span>%t%<span class="keyword">signal</span>%s%w_selected_init_filename%t%:%s%<span class="keytype">string</span>%s%(1%s%<span class="keyword">to</span>%s%MAX_INIT_FILENAME_SIZE);<br/>
+<a name="108"/><span style="color:red">%s%%s%%s%108%s%%s%</span>%t%<span class="keyword">signal</span>%s%w_selected_dump_filename%t%:%s%<span class="keytype">string</span>%s%(1%s%<span class="keyword">to</span>%s%MAX_DUMP_FILENAME_SIZE);<br/>
+<a name="109"/><span style="color:red">%s%%s%%s%109%s%%s%</span>%t%<br/>
+<a name="110"/><span style="color:red">%s%%s%%s%110%s%%s%</span>%t%<span class="comment">--%s%Declare%s%internal%s%bit%s%to%s%boolean%s%signals</span><br/>
+<a name="111"/><span style="color:red">%s%%s%%s%111%s%%s%</span>%t%<span class="keyword">signal</span>%s%w_mem_clr%t%:%t%<span class="keytype">boolean</span>;<br/>
+<a name="112"/><span style="color:red">%s%%s%%s%112%s%%s%</span>%t%<span class="keyword">signal</span>%s%w_mem_init%t%:%t%<span class="keytype">boolean</span>;<br/>
+<a name="113"/><span style="color:red">%s%%s%%s%113%s%%s%</span>%t%<span class="keyword">signal</span>%s%w_mem_dump%t%:%t%<span class="keytype">boolean</span>;<br/>
+<a name="114"/><span style="color:red">%s%%s%%s%114%s%%s%</span>%t%<span class="keyword">signal</span>%s%w_verbose%t%:%t%<span class="keytype">boolean</span>;<br/>
+<a name="115"/><span style="color:red">%s%%s%%s%115%s%%s%</span>%t%<br/>
+<a name="116"/><span style="color:red">%s%%s%%s%116%s%%s%</span><span class="keyword">begin</span><br/>
+<a name="117"/><span style="color:red">%s%%s%%s%117%s%%s%</span>%t%<br/>
+<a name="118"/><span style="color:red">%s%%s%%s%118%s%%s%</span>%t%MEM:%s%simple_scale_mem<br/>
+<a name="119"/><span style="color:red">%s%%s%%s%119%s%%s%</span>%t%%t%<span class="keyword">generic</span>%s%<span class="keyword">map</span><br/>
+<a name="120"/><span style="color:red">%s%%s%%s%120%s%%s%</span>%t%%t%(<br/>
+<a name="121"/><span style="color:red">%s%%s%%s%121%s%%s%</span>%t%%t%%t%<span class="comment">--%s%Memory%s%interface%s%parameters</span><br/>
+<a name="122"/><span style="color:red">%s%%s%%s%122%s%%s%</span>%t%%t%%t%ADDR_SIZE_BITS%t%=&gt;%s%W_ADDR_SIZE_BITS,<br/>
+<a name="123"/><span style="color:red">%s%%s%%s%123%s%%s%</span>%t%%t%%t%WORD_SIZE_BYTES%t%=&gt;%s%W_WORD_SIZE_BYTES,<br/>
+<a name="124"/><span style="color:red">%s%%s%%s%124%s%%s%</span>%t%%t%%t%DATA_SIZE_WORDS%t%=&gt;%s%W_DATA_SIZE_WORDS,<br/>
+<a name="125"/><span style="color:red">%s%%s%%s%125%s%%s%</span>%t%%t%%t%READ_DELAY%t%%t%%t%=&gt;%s%W_READ_DELAY,<br/>
+<a name="126"/><span style="color:red">%s%%s%%s%126%s%%s%</span>%t%%t%%t%WRITE_DELAY%t%%t%%t%=&gt;%s%W_WRITE_DELAY<br/>
+<a name="127"/><span style="color:red">%s%%s%%s%127%s%%s%</span>%t%%t%)<br/>
+<a name="128"/><span style="color:red">%s%%s%%s%128%s%%s%</span>%t%%t%<span class="keyword">port</span>%s%<span class="keyword">map</span><br/>
+<a name="129"/><span style="color:red">%s%%s%%s%129%s%%s%</span>%t%%t%(<br/>
+<a name="130"/><span style="color:red">%s%%s%%s%130%s%%s%</span>%t%%t%%t%<span class="comment">--%s%Test%s%bench%s%control%s%signals</span><br/>
+<a name="131"/><span style="color:red">%s%%s%%s%131%s%%s%</span>%t%%t%%t%mem_clr%t%%t%%t%%t%=&gt;%s%mem_clr,<br/>
+<a name="132"/><span style="color:red">%s%%s%%s%132%s%%s%</span>%t%%t%%t%mem_init%t%%t%%t%=&gt;%s%mem_init,<br/>
+<a name="133"/><span style="color:red">%s%%s%%s%133%s%%s%</span>%t%%t%%t%mem_dump%t%%t%%t%=&gt;%s%mem_dump,<br/>
+<a name="134"/><span style="color:red">%s%%s%%s%134%s%%s%</span>%t%%t%%t%verbose%t%%t%%t%%t%=&gt;%s%verbose,<br/>
+<a name="135"/><span style="color:red">%s%%s%%s%135%s%%s%</span>%t%%t%%t%start_address%t%=&gt;%s%start_address,<br/>
+<a name="136"/><span style="color:red">%s%%s%%s%136%s%%s%</span>%t%%t%%t%last_address%t%=&gt;%s%last_address,<br/>
+<a name="137"/><span style="color:red">%s%%s%%s%137%s%%s%</span>%t%%t%%t%init_filename%t%=&gt;%s%w_selected_init_filename,<br/>
+<a name="138"/><span style="color:red">%s%%s%%s%138%s%%s%</span>%t%%t%%t%dump_filename%t%=&gt;%s%w_selected_dump_filename,<br/>
+<a name="139"/><span style="color:red">%s%%s%%s%139%s%%s%</span>%t%%t%%t%<br/>
+<a name="140"/><span style="color:red">%s%%s%%s%140%s%%s%</span>%t%%t%%t%<span class="comment">--%s%Memory%s%interface%s%signals</span><br/>
+<a name="141"/><span style="color:red">%s%%s%%s%141%s%%s%</span>%t%%t%%t%r_enable%t%=&gt;%s%read_enable,<br/>
+<a name="142"/><span style="color:red">%s%%s%%s%142%s%%s%</span>%t%%t%%t%w_enable%t%=&gt;%s%write_enable,<br/>
+<a name="143"/><span style="color:red">%s%%s%%s%143%s%%s%</span>%t%%t%%t%addr%t%%t%%t%=&gt;%s%address,<br/>
+<a name="144"/><span style="color:red">%s%%s%%s%144%s%%s%</span>%t%%t%%t%r_data%t%%t%=&gt;%s%read_data,<br/>
+<a name="145"/><span style="color:red">%s%%s%%s%145%s%%s%</span>%t%%t%%t%w_data%t%%t%=&gt;%s%write_data<br/>
+<a name="146"/><span style="color:red">%s%%s%%s%146%s%%s%</span>%t%%t%);<br/>
+<a name="147"/><span style="color:red">%s%%s%%s%147%s%%s%</span>%t%%t%<br/>
+<a name="148"/><span style="color:red">%s%%s%%s%148%s%%s%</span>%t%%t%<span class="comment">--%s%Select%s%the%s%corresponding%s%filenames%s%to%s%currently%s%use</span><br/>
+<a name="149"/><span style="color:red">%s%%s%%s%149%s%%s%</span>%t%%t%w_selected_init_filename%s%&lt;=%s%INIT_FILENAMES(init_file_number);<br/>
+<a name="150"/><span style="color:red">%s%%s%%s%150%s%%s%</span>%t%%t%w_selected_dump_filename%s%&lt;=%s%DUMP_FILENAMES(dump_file_number);<br/>
+<a name="151"/><span style="color:red">%s%%s%%s%151%s%%s%</span>%t%%t%<br/>
+<a name="152"/><span style="color:red">%s%%s%%s%152%s%%s%</span><span class="keyword">end</span>%s%<span class="keyword">architecture</span>%s%wrapper;<br/>
+<a name="153"/><span style="color:red">%s%%s%%s%153%s%%s%</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>
